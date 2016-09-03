@@ -1,0 +1,307 @@
+\chapter{OMELETTE Mashup Registry (OMR)}
+
+\section{Installation of Sesame with uSeekM (+PostgreSQL +PostGIS)}
+
+Requirements:
+
+\begin{itemize}
+
+\item A Java Servlet Container that supports Java Servlet API 2.4 and Java Server Pages
+(JSP) 2.0, or newer. We recommend using a recent, stable version of Apache Tomcat.
+(http://tomcat.apache.org/)
+\item A recent, stable version of PostgreSQL Server (32Bit).
+
+(http://www.postgresql.org/download/windows/)
+\item PostGIS extension for PostgreSQL. (Can be installed with the Stack Builder that
+   comes with PostgreSQL.)
+\item Extended Sesame HTTP Server with Indexing - USeekM
+
+   (https://dev.opensahara.com/projects/useekm/wiki/HttpServer)
+Installation steps:
+\item First install the PostgreSQL Server for Windows 32Bit (32Bit because the PostGIS
+   extension is not yet 100\% compatible with the 64Bit server and thus is not available in
+  the Stack Builder Installer).
+\item After installing the PostgreSQL Server start the Stack Builder and select PostGIS 1.x
+   under "Spatial Extensions" and install it to the running PostgreSQL instance.
+\item Start the pgAdmin tool to create a database user and database for your index.
+\item Create a new Login-Role (useekm is used as name and password in the example)
+   with superuser rights.
+\item Create a new database (useekm is used as name in the example). Select the created
+   user as owner. Choose "template\_postgis" as template (IMPORTANT!).
+\item Your database should be good to go.
+\item Install Apache Tomcat and get it running. There should be no configuration needed.
+\item Download the latest useekm-http-server and useekm-http-workbench *.war files from
+   https://dev.opensahara.com/nexus/content/repositories/releases/com/opensahara/
+\item You may rename them to openrdf-sesame.war and openrdf-workbench.war if you
+   want to replace your current sesame installation.
+\item Put them in the Tomcat webapps folder. They should automatically get deployed.
+\item Your extended sesame server should be good to go.
+\item Create a configuration file for your indexed repository like this.
+\item The example indexes the http://purl.org/dc/elements/1.1/description predicate.
+\item You may need to edit the database connection settings, like username, password and
+   the URL with the database name.
+\end{itemize}
+
+\begin{lstlisting}[style=consola]
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+<!-- The id "repository" is mandatory! -->
+<bean id="repository" class="org.openrdf.repository.sail.SailRepository">
+<constructor-arg>
+<bean class="com.useekm.indexing.IndexingSail">
+<constructor-arg ref="sail" />
+<constructor-arg ref="indexerSettings" />
+</bean>
+</constructor-arg>
+</bean>
+<!-- This example uses the NativeStore as the underlying sail, you could also use the
+MemoryStore -->
+<bean id="sail" class="org.openrdf.sail.nativerdf.NativeStore" />
+<!-- Please customize the indexer settings: -->
+<bean id="indexerSettings" lazy-init="true"
+class="com.useekm.indexing.postgis.PostgisIndexerSettings">
+<property name="defaultSearchConfig" value="simple" />
+<property name="dataSource" ref="pgDatasource" />
+<property name="matchers">
+<list>
+<bean class="com.useekm.indexing.postgis.PostgisIndexMatcher">
+<property name="predicate"
+value="http://purl.org/dc/elements/1.1/description" />
+<property name="searchConfig" value="simple" />
+</bean>
+</list>
+</property>
+<property name="partitions">
+<list>
+<bean class="com.useekm.indexing.postgis.PartitionDef">
+<property name="name" value="description" />
+<property name="predicates">
+<list>
+<value>http://purl.org/dc/elements/1.1/descr
+iption</value>
+</list>
+</property>
+</bean>
+</list>
+</property>
+<!-- You can add additional configuration, such as index partitions to optimize
+performance. See the documentation. -->
+</bean>
+<bean id="pgDatasource" lazy-init="true"
+class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+<property name="driverClassName" value="org.postgresql.Driver"/>
+<property name="url" value="jdbc:postgresql://localhost:5432/useekm"/> <!--
+CUSTOMIZE! -->
+<property name="username" value="useekm"/>
+<!--
+CUSTOMIZE! -->
+<property name="password" value="useekm"/>
+<!--
+CUSTOMIZE! -->
+</bean>
+</beans>
+\end{lstlisting}
+
+\begin{itemize}
+\item Save this as configuration.xml to a folder in which the webapps have access to.
+\item Open the URL to the workbench http://localhost:8080/useekm-http-workbench).
+\item Enter the URL to your Sesame server. (ex.: http://localhost:8080/useekm-http-server).
+\item Create a new repository.
+\item Choose USeekM Store as Type.
+\item Choose a name and ID.
+\item Press Next and enter the full path to the configuration file mentioned above. (use
+   slashes instead of backslashes!).
+\item Press create and the repository and the tables in the database should get created and
+initialised.
+\end{itemize}
+
+Now you have the prerequisites to install the DataGridService for hosting your own
+OMELETTE Mashup Registry.
+
+\section{Installation of the DataGridService}
+We created an installable package for Windows to run a stand-alone DataGridService with all
+current features of the OMR and a RESTClient with a GUI
+(https://vsr.informatik.tu-chemnitz.de/demo/omr/omrsetup.zip). Just install the package and
+two folders will be created in the selected folder - one with the RESTClient and one with the
+DGS. Before starting the DataGridService you may need to configure it to connect to the
+correct Sesame triple store and repository. In the file “Server\\DgsTestServer.exe.config”
+please set the following values corresponding to these you set up earlier during the
+installation of Sesame and the uSeekM repository:
+
+\begin{lstlisting}[style=consola]
+<appSettings>
+	...
+	<!-- Service Registry -->
+	<add key="sesameStoreUrl" value="[Store URL,
+	i.e.: http://localhost:8080/useekm-http-server/]"/>
+	<add key="sesameRepository" value="[repository]"/>
+	<add key="sesameUsername" value="[username]" />
+	<add key="sesamePassword" value="[password]" />
+</appSettings>
+
+\end{lstlisting}
+
+After you have done this just run the DgsTestServer.exe with administrative privileges. Now
+your OMELETTE Mashup Registry is ready for usage.
+
+\section{User manual}
+The OMR provides a REST interface which is illustrated in this section. The following usage scenarios will help you get started.
+Create a new resource for storing semantic component descriptions:
+
+\begin{lstlisting}[style=consola]
+POST /omr HTTP/1.1
+Host: datagridservice.example.org
+Content-Type: text/xml
+Content-Length: xxx
+<collection xmlns="http://www.w3.org/2007/app"
+xmlns:atom="http://www.w3.org/2005/Atom"
+xmlns:dgs="http://www.webcomposition.net/2008/02/dgs/">
+	<atom:title>components</atom:title>
+	<dgs:dataspaceengines>
+	<dgs:dataspaceengine
+	dgs:type="http://www.webcomposition.net/2008/02/dgs/DataSpaceEngines/ServiceRegistr
+	yDataSpaceEngine" />
+	</dgs:dataspaceengines>
+</collection>
+
+\end{lstlisting}
+
+Add new data to the OMR:
+
+\begin{lstlisting}[style=consola]
+POST /omr/components HTTP/1.1
+Host: datagridservice.example.org
+Content-Type: text/xml
+Content-Length: xxx
+<rdf:RDF
+xml:base="https://datagridservice.example.org/omr/components/graphs/1705f351-db6e-4
+037-899c-08156ab31e13" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+xmlns:ns0="http://www.ict-omelette.eu/schema.rdf#"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<ns0:Widget rdf:about="http://eco.netvibes.com/themes/368491/wasabi">
+		<ns1:description xmlns:ns1="http://purl.org/dc/elements/1.1/">Official theme for
+		Netvibes Wasabi</ns1:description>
+		<ns2:source xmlns:ns2="http://purl.org/dc/elements/1.1/"
+		rdf:resource="http://eco.netvibes.com/themes/368491/wasabi" />
+		<ns3:isPartOf xmlns:ns3="http://purl.org/dc/terms/"
+		rdf:resource="https://datagridservice.example.org/omr/components/graphs/1705f351-db6
+		e-4037-899c-08156ab31e13" />
+		<ns0:categorizedBy>Textures; Official</ns0:categorizedBy>
+		<ns0:endpoint
+		rdf:resource="http://widgets.opera.com/widget/download/force/10322/1.0/" />
+		<ns0:hasRegistryEntry
+		rdf:resource="http://datagridservice.example.org/omr/components/feedItem?
+		name=https://datagridservice.example.org/omr/components/graphs/1705f351-db6e-4037-
+		899c-08156ab31e13" />
+		<ns4:installs xmlns:ns4="http://www.netvibes.com/#">29678</ns4:installs>
+		<ns5:regions xmlns:ns5="http://www.netvibes.com/#"></ns5:regions>
+		<rdfs:label>Wasabi</rdfs:label>
+		</ns0:Widget>
+</rdf:RDF>
+\end{lstlisting}
+Get all available components registered in OMR:
+
+
+\begin{lstlisting}[style=consola]
+GET /omr/components HTTP/1.1
+Host: datagridservice.example.org
+Accept: text/xml
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title type="text">Available Components</title>
+	<subtitle type="text">Component descriptions</subtitle>
+	<id>http://datagridservice.example.org/omr/components</id>
+	<updated>2012-05-30T15:42:26+02:00</updated>
+	<link rel="meta" type="application/rdf+xml" title="Feed metadata"
+	href="http://datagridservice.example.org/omr/components/meta" />
+	<link rel="views" type="application/atom+xml" title="Views on RDF dataset"
+	href="http://datagridservice.example.org/omr/components/views" />
+	<link rel="sparql" type="application/sparql-results+xml" title="Sparql endpoint"
+	href="http://datagridservice.example.org/omr/components/sparql" />
+	<link rel="sparql-update" type="application/sparql-results+xml" title="Sparql-Update
+	endpoint" href="http://datagridservice.example.org/omr/components/sparql-update" />
+	<link rel="data" type="application/rdf+xml" title="RDF dataset"
+	href="http://datagridservice.example.org/omr/components/graphs/all" />
+	<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch
+	endpoint"
+	href="http://datagridservice.example.org/omr/components/opensearch/document" />
+	<entry>
+	<id>https://vsr-web.informatik.tu-chemnitz.de/omr/components/graphs/bf5cdceb-38c7-4a
+	0c-b5ed-49f1eae6bfa2</id>
+	<title type="text">Wasabi</title>
+	<summary type="text">Official theme for Netvibes Wasabi</summary>
+	<published>2012-05-30T15:42:27+02:00</published>
+	<updated>2012-05-30T15:42:27+02:00</updated>
+	<link rel="edit-media" type="application/rdf+xml"
+	href="http://datagridservice.example.org/omr/components/graphs/?
+	name=https://vsr-web.informatik.tu-chemnitz.de/omr/components/graphs/bf5cdceb-38c7-4
+	a0c-b5ed-49f1eae6bfa2" />
+	<link rel="edit" type="application/atom+xml;type=entry;"
+	href="http://datagridservice.example.org/omr/components/feedItem?
+	name=https://vsr-web.informatik.tu-chemnitz.de/omr/components/graphs/bf5cdceb-38c7-4
+	a0c-b5ed-49f1eae6bfa2" />
+	<content type="application/rdf+xml"
+	src="http://datagridservice.example.org/omr/components/graphs/?
+	name=https://vsr-web.informatik.tu-chemnitz.de/omr/components/graphs/bf5cdceb-38c7-4
+	a0c-b5ed-49f1eae6bfa2" />
+	</entry>
+	...
+</feed>
+
+\end{lstlisting}
+
+Creation of example view for searching components by their description (SPARQL template):
+
+\begin{lstlisting}[style=consola]
+POST /omr/components/views HTTP/1.1
+Host: datagridservice.example.org
+Content-Type: text/xml
+Content-Length: xxx
+<?xml version="1.0" encoding="utf-8"?>
+<entry xmlns="http://www.w3.org/2005/Atom">
+	<title type="text">services</title>
+	<content type="application/xml+vnd.omr">
+		<omr:view xmlns:omr="http://www.ict-omelette.eu/schema.rdf#omr">
+		<omr:url>?query={query=}</omr:url>
+		<omr:sparql>
+			<![CDATA[
+			PREFIX pdc:<http://purl.org/dc/elements/1.1/>
+			PREFIX search:<http://rdf.opensahara.com/search#>
+			SELECT DISTINCT ?result
+			WHERE
+			{
+			?result pdc:description ?description.
+			FILTER search:text(?description, "{query}")
+			}
+			]]>
+		</omr:sparql>
+		</omr:view>
+	</content>
+</entry>
+
+\end{lstlisting}
+
+Execute view to get all components matching a given query string:
+
+\begin{lstlisting}[style=consola]
+GET /omr/components/views/services/data?query=geo HTTP/1.1
+Host: datagridservice.example.org
+Accept: application/sparql-results+xml
+<?xml version="1.0" encoding="utf-8"?>
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+	<head>
+	<variable name="result" />
+	</head>
+	<results>
+	<result>
+	<binding name="result">
+	<uri>http://geoservice.example.org</uri>
+	</binding>
+	</result>
+	</results>
+</sparql>
+
+\end{lstlisting}

@@ -1,0 +1,60 @@
+\chapter{Conclusions and future lines}
+\label{chap:conclusions}
+\begin{chapterintro}
+In this chapter we will describe the conclusions extracted from this master thesis, the achievements and thinkings about future work.
+\end{chapterintro}
+
+\cleardoublepage
+\section{Conclusions}
+
+By fetching existing services and widgets on the Internet, we have created a powerful search engine without having any own content, enabling final user find those services that he needs, that is part of the mash-up generation philosophy.
+
+This project has been developed in the scope of an European FP7 project contributing to the automated discovery section. This helped us to solve problems that without being part of a big problem we would not have noticed, like taking into account that final endpoint servers are not going to be as powerful as developing ones or making the system scalable.
+
+Also helped to extend functionalities of other projects, such as Episteme.
+
+We have used existing technologies whenever it was possible, and this helped improving them when more complex requisites where necessary. As an example, this happened with Scrappy, which was modified, created a branch and then merged again with extra functionalities.
+
+Dividing the project into different modules forced us to rely on existing web and software standards which helped us to integrate and interconnect all of them.
+
+We experienced big changes as early technology adopters, such as new versions of the SPARQL language fixing bugs and creating new functionalities. We have dared to use extremely new technologies still in alpha developments, with its pros and cons.
+
+\section{Achieved goals}
+
+\begin{description}
+\item[Fetch content automatically]
+This goal has been achieved successfully. We have been able to discover existing content from websites and then fetch it. This helped us to have a big repository of services and content that the user will need. This is deeply described in chapter \ref{sec:scrappy}.
+
+\item[Structure content] It was essential to structure the content fetched from the Internet. This has been possible thanks to semantic and linked data technologies. This is detailed in chapter \ref{subsec:limonontology}
+
+\item[Store content] An other crucial feature that was successfully implemented was how to store all the information without losing the structured format described before. This has been achieved by using semantic repositories. More information can be consulted in chapter \ref{sec:omrsesame}.
+
+\item[Rank content]The content without knowing if it is useful or not is useless. One of the main goals was to make possible to distinguish good and bad discovered content. This has been achieved by defining and implementing algorithms that will automatically rank the stored content. The algorithm and it's implementation is explained in chapter ref{sec:rankingmodule}.
+ 
+\item[Manage content] It was completely necessary to manage and administer the discovered content by the administrator user. This has been achieved by creating an interface that allows searching and filtering into the automated discovered content and after selecting the useful content. This is described in chapter \ref{sec:omradmin}.
+
+\item[Search content] The main goal of the project was enabling the user search the services he needed. This has been done by creating an easy-to-use interface that queries the repository and lets the user find suitable services. To see detailed information see chapter \ref{sec:omrclientbrowser}.
+
+\item[Suggest similar content] Many times the user does not know what he wants, an other important role of the project was suggesting the user possible results that matches his needs. This has been achieved by using semantic search empowered technologies. Nevertheless, this has been implemented in a simpler scenario using different content and different ontology. This feature is available in the Job Matching demo\footnote{http://demos.gsi.dit.upm.es/job-matching/}.
+
+\end{description}
+
+\section{Future work}
+
+There are several lines than can be followed to continue and extend features of this work.
+
+In the following points some fields of study or improvement are presented to continue the development.
+
+\begin{itemize}
+	\item In automated discovery enable only search for new services. Without scrapping the entire web again we would gain a lot if processing time and this could make possible more frequent discoveries and more up to date content.
+	\item Also fetching services and widgets from new Internet repositories.
+	\item Not only fetch content from existing repositories, explore the web to discover new ones. This makes possible to have different content and always new and undiscovered services.
+	\item Make the discovering service to be launched from web interface. Now it is launched from console. Integrated into the administrative interface would be optimal.
+	\item Make discovery date visible. This would make possible to know if the information about a service is reliable. Also making possible to update information of only selected services.
+	\item New ways of ranking content, based on social networks and popularity on the Internet.
+	\item Categorize widgets and services for existing platforms. For example Wordpress\footnote{http://wordpress.org/} plugins.
+	\item Discover mobile services. Content discovered right now is desktop oriented.
+	\item Let the user try and show a demonstration of the services and widgets in the search interface.
+	\item Semantic search and suggestions to find similar content that could fit in the user's preferences. This has been already done in a smaller scenario as a proof of concept.
+
+\end{itemize}
