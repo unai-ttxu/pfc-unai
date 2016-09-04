@@ -32,15 +32,13 @@ These use cases will be described the next sections, including each one a table 
 \noalign{\hrule height 2pt}
 \textbf{Actor identifier} & \textbf{Role} & \textbf{Description}\tn
 \hline
-ACT-1 & User & End user that uses Omelette mash-up Editor  to find a mash-up based on her goals, which are expressed using keywords\tn
+ACT-1 & Gamer & End user that play the game using the physical instruments and the application\tn
 \hline
-ACT-2 & Developer & Technical developer which uses the OMR.\tn
+ACT-2 & Instrument recognition algorithm & Algorithm that detects what physical figure has been placed on the application recognition zones\tn
 \hline
-ACT-4 & Admin & Administrator of the OMR, in charge of tasks such as inserting, deleting mash-ups, as well as including new available mash-up repositories..\tn
+ACT-3 & Client & Company that have outsourced the game development\tn
 \hline
-ACT-5 & MDP & mash-up Delivery Platform, component of the "Live Omelette Environment" that executes mash-ups..\tn
-\hline
-ACT-6 & External service & External services for executing actions.\tn
+ACT-4 & Flurry & Tecnhology that manage application metrics and errors\tn
 \noalign{\hrule height 2pt}
 \end{tabular}
 \caption{Actors list}
@@ -48,122 +46,142 @@ ACT-6 & External service & External services for executing actions.\tn
 \end{table}
 
 
-
-
-~\\
-
+\clearpage
 
 
 \FloatBarrier
 
 
-\subsection{OMR composition and search use case}
-This use case package collects the search functionalities of OMR, as shown in \ref{fig:pack-uc1}.
+\subsection{Game modes use case}
+This use case package collects the game play modes and their functionalities, as shown in \ref{fig:pack-uc1}.
 
 The use cases presented in this section are as shown in the Figure \ref{fig:pack-uc1}:
 \begin{itemize}
-\item \textit{keyword search} detailed in sub-section \ref{subsec:keywordsearch}.
-\item \textit{mashup browse by category} detailed in sub-section \ref{subsec:mashupbrowsebycat}.
-\item \textit{ask question}  detailed in sub-section \ref{subsec:askquestion}.
-\item \textit{mashup search by query}  detailed in sub-section \ref{subsec:mashupsearchbyquery}.
-\item \textit{mashup compose}  detailed in sub-section \ref{subsec:mashupcompose}.
+\item \textit{play instrument} detailed in sub-section \ref{subsec:playinstrument}.
+\item \textit{conducte orchestra} detailed in sub-section \ref{subsec:conducteorchestra}.
+\item \textit{discover instrument}  detailed in sub-section \ref{subsec:discoverinstrument}.
+\item \textit{watch demo}  detailed in sub-section \ref{subsec:watchdemo}.
+\item \textit{select melody}  detailed in sub-section \ref{subsec:selectmelody}.
+\item \textit{select instrument}  detailed in sub-section \ref{subsec:selectinstrument}.
 \end{itemize}
 
 
 \begin{figure}[h]
 \centering
-\includegraphics{graphics/uc1.pdf}
-\caption{Composition and Search use case}
+\includegraphics[width=400pt]{graphics/uc1.pdf}
+\caption{Game modes use case}
 \label{fig:pack-uc1}
 \end{figure}
 
 \newpage
-\subsubsection{Keyword search}
-\label{subsec:keywordsearch}
+\subsubsection{Play instrument}
+\label{subsec:playinstrument}
 
 \begin{table}[!htpb]
 \centering
 \begin{tabular}{|c|x{1cm}x{5cm}x{5cm}|}
 \noalign{\hrule height 2pt}
-\textbf{Use Case Name} & \multicolumn{3}{c|}{keyword search}\\
+\textbf{Use Case Name} & \multicolumn{3}{c|}{play instrument}\\
 \hline
 \textbf{Use Case ID} & \multicolumn{3}{x{11cm}|}{UC1.1}\\
 \hline
-\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{OMR  has been fed with  mash-ups and individual services}\\
+\textbf{Primary Actor} & \multicolumn{3}{c|}{Gamer}\\
 \hline
-\textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{Optionally, the developer completes the MDL definition to make a mash-up executable}\\
+\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{The application is showing the home screen and the gamer has the instruments physical miniatures}\\
+\hline
+\textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{Optionally, the gamer can watch a demo, change the instrument or change the melody}\\
 \hline
 \textbf{Flow of Events} & \multicolumn{1}{c|}{} & \multicolumn{1}{x{5cm}|}{Actor Input} & \multicolumn{1}{x{5cm}|}{System Response}\\
 \hline
 
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & \multicolumn{1}{x{5cm}|}{The user / developer expresses her goals by using textual keywords} & \multicolumn{1}{x{5cm}|}{Ranked result list of mash-ups and individual services. The  mash-up can be an existing  mash-up or a new dynamically composed  mash-up, which can be executable or not. In the same way, the service can be automatically available in the editor or could require human intervention. }\\
+\textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & \multicolumn{1}{x{5cm}|}{The gamer put an instrument miniature on home screen. The instrument is placed in the detection zone circle that represents the play instrument game mode} & \multicolumn{1}{x{5cm}|}{The application load the play instrument mode game with the instrument that have been placed on the screen and the default melody. }\\
 \hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{2a} & \multicolumn{1}{x{5cm}|}{The user / developer access  service / mash-up metadata and   selects one  service / mash-up in order to use it} & \multicolumn{1}{x{5cm}|}{System shows details of the metadata service / mash-up.}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{2b} & \multicolumn{1}{x{5cm}|}{The developer has obtained a non executable  mash-up and opens the editor to complete it} & \multicolumn{1}{x{5cm}|}{The system opens the mash-up editor, which allows the user to finish the mash-up composition (giving API details, etc.), completing the MDL, and finally, publishing the resulting  mash-up in the OMR.}\\
-\hline
-
 
 \end{tabular}
 \end{table}
 
 \FloatBarrier
 
-
-\subsubsection{Mash-up browse by category}
-\label{subsec:mashupbrowsebycat}
+\newpage
+\subsubsection{Conducte orchestra}
+\label{subsec:conducteorchestra}
 
 
 \begin{table}[!htpb]
 \centering
 \begin{tabular}{|c|x{1cm}x{5cm}x{5cm}|}
 \noalign{\hrule height 2pt}
-\textbf{Use Case Name} & \multicolumn{3}{c|}{mash-up browse by category}\\
+\textbf{Use Case Name} & \multicolumn{3}{c|}{conducte orchestra}\\
 \hline
 \textbf{Use Case ID} & \multicolumn{3}{x{11cm}|}{UC1.2}\\
 \hline
-\textbf{Primary Actor} & \multicolumn{3}{c|}{User, Developer }\\
+\textbf{Primary Actor} & \multicolumn{3}{c|}{Gamer}\\
 \hline
-\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{OMR  has been fed with mash-ups and services and has categorized the service / mash-ups according to one or more categories. For example, users can follow a taxonomy based on their needs and types of applications, such as Appstore, while developers can follow a taxonomy based on the technology, integration needs, etc. }\\
+\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{The application is showing the home screen and the gamer has the instruments physical miniatures}\\
 \hline
-\textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{-}\\
+\textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{Optionally, the gamer can play, stop or change the melody, enable or disable an instrument and change the instrument family}\\
 \hline
 \textbf{Flow of Events} & \multicolumn{1}{c|}{} & \multicolumn{1}{x{5cm}|}{Actor Input} & \multicolumn{1}{x{5cm}|}{System Response}\\
 \hline
 
 \textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & 
-\multicolumn{1}{x{5cm}|}{The user / Developer selects a category} & 
-\multicolumn{1}{x{5cm}|}{Ranked list of service / mash-ups belonging to that category}\\
+\multicolumn{1}{x{5cm}|}{The gamer put an instrument miniature on home screen. The instrument is placed in the detection zone circle that represents the conduct orchestra game mode} & 
+\multicolumn{1}{x{5cm}|}{The application load the conduct orchestra game mode with all instruments enabled, the family instrument selector of the family instrument that have been placed on the screen enabled, and the default melody.}\\
 \hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{2} & 
-\multicolumn{1}{x{5cm}|}{The user / developer refines the search with filtering options} & 
-\multicolumn{1}{x{5cm}|}{Filtered result set based on filtering options}\\
-\hline
-
 
 \end{tabular}
 \end{table}
 \FloatBarrier
 
 \newpage
-\subsubsection{mash-up search by query}
-\label{subsec:mashupsearchbyquery}
+\subsubsection{Discover instrument}
+\label{subsec:discoverinstrument}
 
+\FloatBarrier
 
 \begin{table}[!htpb]
 \centering
 \begin{tabular}{|c|x{1cm}x{5cm}x{5cm}|}
 \noalign{\hrule height 2pt}
-\textbf{Use Case Name} & \multicolumn{3}{c|}{mash-up search by query}\\
+\textbf{Use Case Name} & \multicolumn{3}{c|}{discover instrument}\\
 \hline
 \textbf{Use Case ID} & \multicolumn{3}{x{11cm}|}{UC1.3}\\
 \hline
-\textbf{Primary Actor} & \multicolumn{3}{c|}{Developer}\\
+\textbf{Primary Actor} & \multicolumn{3}{c|}{Gamer}\\
 \hline
-\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{OMR has been fed with service / mash-ups}\\
+\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{The application is showing the home screen and the gamer has the instruments physical miniatures}\\
+\hline
+\textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{Optionally, the gamer can play the an instrument sound and change the instrument family}\\
+\hline
+\textbf{Flow of Events} & \multicolumn{1}{c|}{} & \multicolumn{1}{x{5cm}|}{Actor Input} & \multicolumn{1}{x{5cm}|}{System Response}\\
+\hline
+
+\textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & 
+\multicolumn{1}{x{5cm}|}{The gamer put an instrument miniature on home screen. The instrument is placed in the detection zone circle that represents the discover instrument game mode} & 
+\multicolumn{1}{x{5cm}|}{The application load the discover instrument game mode with the instruments of the family instrument that have been placed on the screen. The game mode shows instrument information and sounds}\\
+\hline
+
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\newpage
+\subsubsection{Watch demo}
+\label{subsec:watchdemo}
+
+
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|c|x{1cm}x{5cm}x{5cm}|}
+\noalign{\hrule height 2pt}
+\textbf{Use Case Name} & \multicolumn{3}{c|}{watch demo}\\
+\hline
+\textbf{Use Case ID} & \multicolumn{3}{x{11cm}|}{UC1.4}\\
+\hline
+\textbf{Primary Actor} & \multicolumn{3}{c|}{Gamer}\\
+\hline
+\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{Play instrument game mode has been selected}\\
 \hline
 \textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{-}\\
 \hline
@@ -171,8 +189,8 @@ The use cases presented in this section are as shown in the Figure \ref{fig:pack
 \hline
 
 \textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & 
-\multicolumn{1}{x{5cm}|}{The developer executes a query using a query language (for example, SPARQL)} & 
-\multicolumn{1}{x{5cm}|}{Result set of matching service / mash-ups}\\
+\multicolumn{1}{x{5cm}|}{The gamer touch Demo button with a selected melody and instrument} & 
+\multicolumn{1}{x{5cm}|}{The melody in played with the instrument selected and musical notes are highlated}\\
 \hline
 
 
@@ -181,59 +199,34 @@ The use cases presented in this section are as shown in the Figure \ref{fig:pack
 \FloatBarrier
 
 \newpage
-\subsubsection{mash-up compose}
-\label{subsec:mashupcompose}
+\subsubsection{Select melody}
+\label{subsec:selectmelody}
 
 \begin{table}[!htpb]
 \centering
 \begin{tabular}{|c|x{1cm}x{5cm}x{5cm}|}
 \noalign{\hrule height 2pt}
-\textbf{Use Case Name} & \multicolumn{3}{c|}{mash-up compose}\\
-\hline
-\textbf{Use Case ID} & \multicolumn{3}{x{11cm}|}{UC1.4}\\
-\hline
-\textbf{Primary Actor} & \multicolumn{3}{c|}{User, developer}\\
-\hline
-\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{OMR has been fed with individual services and  mash-ups}\\
-\hline
-\textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{Optionally, the developer completes the MDL definition to make a mash-up executable}\\
-\hline
-\textbf{Flow of Events} & \multicolumn{1}{c|}{} & \multicolumn{1}{x{5cm}|}{Actor Input} & \multicolumn{1}{x{5cm}|}{System Response}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & 
-\multicolumn{1}{x{5cm}|}{The User / Developer expresses her goals using textual keywords} & 
-\multicolumn{1}{x{5cm}|}{Since there is no service mash-up that fulfills the user goals, the system analyses potential combinations of available mash-ups in OMR and provides a composed mash-up or a template of a potential composition}\\
-\hline
-
-\end{tabular}
-\end{table}
-\FloatBarrier
-
-\newpage
-\subsubsection{Ask suggestion}
-\label{subsec:askquestion}
-
-\begin{table}[!htpb]
-\centering
-\begin{tabular}{|c|x{1cm}x{5cm}x{5cm}|}
-\noalign{\hrule height 2pt}
-\textbf{Use Case Name} & \multicolumn{3}{c|}{Ask suggestion}\\
+\textbf{Use Case Name} & \multicolumn{3}{c|}{select melody}\\
 \hline
 \textbf{Use Case ID} & \multicolumn{3}{x{11cm}|}{UC1.5}\\
 \hline
-\textbf{Primary Actor} & \multicolumn{3}{c|}{Editor}\\
+\textbf{Primary Actor} & \multicolumn{3}{c|}{Gamer}\\
 \hline
-\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{OMR has been fed with individual services and  mash-ups}\\
+\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{Play instrument game mode or conduct orchestra have been selected}\\
 \hline
-\textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{}\\
+\textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{-}\\
 \hline
 \textbf{Flow of Events} & \multicolumn{1}{c|}{} & \multicolumn{1}{x{5cm}|}{Actor Input} & \multicolumn{1}{x{5cm}|}{System Response}\\
 \hline
 
 \textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & 
-\multicolumn{1}{x{5cm}|}{The mash-up editor requests a list of available service /   mash-ups to suggest them to the user} & 
-\multicolumn{1}{x{5cm}|}{Ranked result list of  service / mash-ups expressed in MDL. The  mash-up can be an existing  mash-up or a new dynamically composed mash-up, which can be executable or not}\\
+\multicolumn{1}{x{5cm}|}{The gamer touch Melodies button} & 
+\multicolumn{1}{x{5cm}|}{A list of the melodies are shown}\\
+\hline
+
+\textbf{} & \multicolumn{1}{x{0.5cm}|}{2} & 
+\multicolumn{1}{x{5cm}|}{The gamer chose one of the avaiable melodies} & 
+\multicolumn{1}{x{5cm}|}{Selected melody is loaded into game mode}\\
 \hline
 
 \end{tabular}
@@ -241,70 +234,86 @@ The use cases presented in this section are as shown in the Figure \ref{fig:pack
 \FloatBarrier
 
 \newpage
-\subsection{OMR discovery and administration use case}
-This use case package collects the main administration use cases of the OMR, as shown in \ref{fig:pack-uc2}
+\subsubsection{Select instrument}
+\label{subsec:selectinstrument}
+
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|c|x{1cm}x{5cm}x{5cm}|}
+\noalign{\hrule height 2pt}
+\textbf{Use Case Name} & \multicolumn{3}{c|}{select instrument}\\
+\hline
+\textbf{Use Case ID} & \multicolumn{3}{x{11cm}|}{UC1.6}\\
+\hline
+\textbf{Primary Actor} & \multicolumn{3}{c|}{Gamer}\\
+\hline
+\textbf{Secondary Actor} & \multicolumn{3}{c|}{Instrument recognition algorithm}\\
+\hline
+\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{Any game mode is selected and the gamer has the instruments physical miniatures}\\
+\hline
+\textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{O-}\\
+\hline
+\textbf{Flow of Events} & \multicolumn{1}{c|}{} & \multicolumn{1}{x{5cm}|}{Actor Input} & \multicolumn{1}{x{5cm}|}{System Response}\\
+\hline
+
+\textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & 
+\multicolumn{1}{x{5cm}|}{The Gamer place the instrument in the circle recognition zone} & 
+\multicolumn{1}{x{5cm}|}{The Instrument recognition algorithm process the instrument pad touches and determine which instrument have been placed}\\
+\hline
+
+\textbf{} & \multicolumn{1}{x{0.5cm}|}{2} & 
+\multicolumn{1}{x{5cm}|}{The Instrument recognition algorithm detect a different instrument} & 
+\multicolumn{1}{x{5cm}|}{Selected instrument is loaded into game mode}\\
+\hline
+
+\end{tabular}
+\end{table}
+\FloatBarrier
+
+\newpage
+\subsection{Game managment use case}
+This use case package collects the main managment use cases of the game, as shown in \ref{fig:pack-uc2}
 
 \begin{itemize}
-\item \textit{automated mash-up feeding} detailed in subsection \ref{subsec:automatedmashupfeeding}
-\item \textit{manual mash-up feeding} detailed in subsection \ref{subsec:manualmashupmanagement}
-\item \textit{form discovery and description} detailed in subsection \ref{subsec:formdiscoveryanddescription}
-\item \textit{mash-up registry integration} detailed in subsection \ref{subsec:mashupregistryintegration}
-\item \textit{mash-up registry API based integration} detailed in subsection \ref{subsec:apibasedintegration}
-\item \textit{mash-up registry Scrappy based integration} detailed in subsection \ref{subsec:scrappybasedintegration}
-\item \textit{manual mash-up management} detailed in subsection \ref{subsec:manualmashupmanagement}
-\item \textit{browse pending} detailed in subsection \ref{subsec:pending}
-\item \textit{validate service} detailed in subsection \ref{subsec:validate}
-\item \textit{reject service} detailed in subsection \ref{subsec:reject}
+\item \textit{metrics managment} detailed in subsection \ref{subsec:metricsmanagment}
+\item \textit{errors managment} detailed in subsection \ref{subsec:errorsmanagment}
 \end{itemize}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=400pt]{graphics/uc2.pdf}
-\caption{OMR discovery and administration use case}
+\caption{Game managment use case}
 \label{fig:pack-uc2}
 \end{figure}
 
 \FloatBarrier
 
 \newpage
-\subsubsection{Automatic mash-up feeding}
-\label{subsec:automatedmashupfeeding}
+\subsubsection{Metrics managment}
+\label{subsec:metricsmanagment}
 
 \begin{table}[!htpb]
 \centering
 \begin{tabular}{|c|x{1cm}x{5cm}x{5cm}|}
 \noalign{\hrule height 2pt}
-\textbf{Use Case Name} & \multicolumn{3}{c|}{Automatic mash-up feeding }\\
+\textbf{Use Case Name} & \multicolumn{3}{c|}{Metrics managment}\\
 \hline
 \textbf{Use Case ID} & \multicolumn{3}{x{11cm}|}{UC2.1}\\
 \hline
-\textbf{Primary Actor} & \multicolumn{3}{c|}{Admin}\\
+\textbf{Primary Actor} & \multicolumn{3}{c|}{Client}\\
 \hline
-\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{Availability of external service mash-up repositories or web sites}\\
+\textbf{Secondary Actor} & \multicolumn{3}{c|}{Flurry}\\
 \hline
-\textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{Service / mash-ups are added to OMR}\\
+\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{Flurry client account has been created. Application is running}\\
+\hline
+\textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{Metrics are added to Flurry servers}\\
 \hline
 \textbf{Flow of Events} & \multicolumn{1}{c|}{} & \multicolumn{1}{x{5cm}|}{Actor Input} & \multicolumn{1}{x{5cm}|}{System Response}\\
 \hline
 
 \textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & 
-\multicolumn{1}{x{5cm}|}{The admin selects a  mash-up source } & 
-\multicolumn{1}{x{5cm}|}{The system connects to the service mash-up source and obtains potential  mash-ups, their metadata, and catalogues them}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{2} & 
-\multicolumn{1}{x{5cm}|}{} & 
-\multicolumn{1}{x{5cm}|}{he system generates automatically the MDL (partial MDL or  executable MDL).}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{3a} & 
-\multicolumn{1}{x{5cm}|}{(Optional) the admin reviews results and approves them for its inclusion in the registry.} & 
-\multicolumn{1}{x{5cm}|}{}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{3b} & 
-\multicolumn{1}{x{5cm}|}{The discovered mash-ups are automatically integrated in the registry.} & 
-\multicolumn{1}{x{5cm}|}{}\\
+\multicolumn{1}{x{5cm}|}{The client access to their Flurry acount} & 
+\multicolumn{1}{x{5cm}|}{Flurry shows all metrics included with their SDK in the application}\\
 \hline
 
 \end{tabular}
@@ -312,411 +321,37 @@ This use case package collects the main administration use cases of the OMR, as 
 \FloatBarrier
 
 \newpage
-\subsubsection{HTML Form discovery and description}
-\label{subsec:formdiscoveryanddescription}
+\subsubsection{Errors managment}
+\label{subsec:errorsmanagment}
 
 \begin{table}[!htpb]
 \centering
 \begin{tabular}{|c|x{1cm}x{5cm}x{5cm}|}
 \noalign{\hrule height 2pt}
-\textbf{Use Case Name} & \multicolumn{3}{c|}{Automatic mash-up feeding }\\
+\textbf{Use Case Name} & \multicolumn{3}{c|}{Metrics managment}\\
 \hline
 \textbf{Use Case ID} & \multicolumn{3}{x{11cm}|}{UC2.2}\\
 \hline
-\textbf{Primary Actor} & \multicolumn{3}{c|}{Admin}\\
+\textbf{Primary Actor} & \multicolumn{3}{c|}{Client/Developer}\\
 \hline
-\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{Availability of external web sites offering services}\\
+\textbf{Secondary Actor} & \multicolumn{3}{c|}{Flurry}\\
 \hline
-\textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{Service / mash-ups are added to OMR}\\
+\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{Flurry client and developer accounts has been created. Application is running and an error has been thrown}\\
 \hline
-\textbf{Flow of Events} & \multicolumn{1}{c|}{} & \multicolumn{1}{x{5cm}|}{Actor Input} & \multicolumn{1}{x{5cm}|}{System Response}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & 
-\multicolumn{1}{x{5cm}|}{The admin selects a interesting domain and a description schema for that  domain (mash-up metadata). Optionally, the admin selects a set of potential interesting web domain as well as a black list} & 
-\multicolumn{1}{x{5cm}|}{The system crawls the web looking for web sites which match  the domain. The system identifies interesting HTML forms, characterizes these HTML forms as well as their results. Then, it classifies the identified mash-up, generates its MDL and adds it to the OMR.}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{2a} & 
-\multicolumn{1}{x{5cm}|}{(Optional) the admin reviews the results and approves them for its inclusion in the registry.} & 
-\multicolumn{1}{x{5cm}|}{}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{2b} & 
-\multicolumn{1}{x{5cm}|}{} & 
-\multicolumn{1}{x{5cm}|}{The discovered service / mash-ups are automatically integrated in the registry.}\\
-\hline
-
-
-\end{tabular}
-\end{table}
-\FloatBarrier
-
-\newpage
-\subsubsection{mash-up registry integration}
-\label{subsec:mashupregistryintegration}
-
-\begin{table}[!htpb]
-\centering
-\begin{tabular}{|c|x{1cm}x{5cm}x{5cm}|}
-\noalign{\hrule height 2pt}
-\textbf{Use Case Name} & \multicolumn{3}{c|}{mash-up registry integration}\\
-\hline
-\textbf{Use Case ID} & \multicolumn{3}{x{11cm}|}{UC2.3}\\
-\hline
-\textbf{Primary Actor} & \multicolumn{3}{c|}{Admin}\\
-\hline
-\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{Availability of external mash-up repositories}\\
-\hline
-\textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{mash-ups are added to OMR}\\
+\textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{Errors are sent to Flurry servers}\\
 \hline
 \textbf{Flow of Events} & \multicolumn{1}{c|}{} & \multicolumn{1}{x{5cm}|}{Actor Input} & \multicolumn{1}{x{5cm}|}{System Response}\\
 \hline
 
 \textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & 
-\multicolumn{1}{x{5cm}|}{The admin selects a mash-up source as well as the polling conditions.} & 
-\multicolumn{1}{x{5cm}|}{The system connects to the mash-up source and obtains mash-up descriptions and catalogues them.}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{2a} & 
-\multicolumn{1}{x{5cm}|}{(Optional) the admin reviews the results and approves them for its inclusion in the registry.} & 
-\multicolumn{1}{x{5cm}|}{}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{2b} & 
-\multicolumn{1}{x{5cm}|}{} & 
-\multicolumn{1}{x{5cm}|}{The discovered service / mash-ups are automatically integrated in the registry.}\\
-\hline
-
-
-\end{tabular}
-\end{table}
-\FloatBarrier
-
-\newpage
-\subsubsection{API based integration}
-\label{subsec:apibasedintegration}
-
-\begin{table}[!htpb]
-\centering
-\begin{tabular}{|c|x{1cm}x{5cm}x{5cm}|}
-\noalign{\hrule height 2pt}
-\textbf{Use Case Name} & \multicolumn{3}{c|}{API based integration}\\
-\hline
-\textbf{Use Case ID} & \multicolumn{3}{x{11cm}|}{UC2.4}\\
-\hline
-\textbf{Primary Actor} & \multicolumn{3}{c|}{Admin}\\
-\hline
-\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{Availability of external  mash-up registries offering an API}\\
-\hline
-\textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{mash-ups are added to OMR}\\
-\hline
-\textbf{Flow of Events} & \multicolumn{1}{c|}{} & \multicolumn{1}{x{5cm}|}{Actor Input} & \multicolumn{1}{x{5cm}|}{System Response}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & 
-\multicolumn{1}{x{5cm}|}{The admin selects a mash-up source and the polling options.} & 
-\multicolumn{1}{x{5cm}|}{The system connects to mash-up source and obtains potential mash-ups, their metadata, and catalogues them}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{2a} & 
-\multicolumn{1}{x{5cm}|}{(Optional) the admin reviews the results and approves them for its inclusion in the registry.} & 
-\multicolumn{1}{x{5cm}|}{}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{2b} & 
-\multicolumn{1}{x{5cm}|}{} & 
-\multicolumn{1}{x{5cm}|}{The discovered service / mash-ups are automatically integrated in the registry.}\\
-\hline
-
-
-\end{tabular}
-\end{table}
-\FloatBarrier
-
-\newpage
-\subsubsection{Scraping based integration}
-\label{subsec:scrappybasedintegration}
-
-\begin{table}[!htpb]
-\centering
-\begin{tabular}{|c|x{1cm}x{5cm}x{5cm}|}
-\noalign{\hrule height 2pt}
-\textbf{Use Case Name} & \multicolumn{3}{c|}{Scraping based integration}\\
-\hline
-\textbf{Use Case ID} & \multicolumn{3}{x{11cm}|}{UC2.5}\\
-\hline
-\textbf{Primary Actor} & \multicolumn{3}{c|}{Admin}\\
-\hline
-\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{Availability of external  mash-up registries  not offering an available API or a restrictive API}\\
-\hline
-\textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{mash-ups / Services are added to OMR}\\
-\hline
-\textbf{Flow of Events} & \multicolumn{1}{c|}{} & \multicolumn{1}{x{5cm}|}{Actor Input} & \multicolumn{1}{x{5cm}|}{System Response}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & 
-\multicolumn{1}{x{5cm}|}{The admin selects a mash-up source and defines a description schema} & 
-\multicolumn{1}{x{5cm}|}{The system scrapes mash-up registry, obtaining potential  mash-ups / services, and catalogues them}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{2a} & 
-\multicolumn{1}{x{5cm}|}{(Optional) the admin reviews the results and approves them for its inclusion in the registry.} & 
-\multicolumn{1}{x{5cm}|}{}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{2b} & 
-\multicolumn{1}{x{5cm}|}{} & 
-\multicolumn{1}{x{5cm}|}{The discovered service / mash-ups are automatically integrated in the registry.}\\
-\hline
-
-
-\end{tabular}
-\end{table}
-\FloatBarrier
-
-\newpage
-\subsubsection{Manual mash-up management}
-\label{subsec:manualmashupmanagement}
-
-\begin{table}[!htpb]
-\centering
-\begin{tabular}{|c|x{1cm}x{5cm}x{5cm}|}
-\noalign{\hrule height 2pt}
-\textbf{Use Case Name} & \multicolumn{3}{c|}{Manual mash-up management}\\
-\hline
-\textbf{Use Case ID} & \multicolumn{3}{x{11cm}|}{UC2.6}\\
-\hline
-\textbf{Primary Actor} & \multicolumn{3}{c|}{Admin}\\
-\hline
-\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{-}\\
-\hline
-\textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{A mash-up is added, deleted to OMR}\\
-\hline
-\textbf{Flow of Events} & \multicolumn{1}{c|}{} & \multicolumn{1}{x{5cm}|}{Actor Input} & \multicolumn{1}{x{5cm}|}{System Response}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{1a} & 
-\multicolumn{1}{x{5cm}|}{The admin selects a  mash-up / service and execute one CRUD operation} & 
-\multicolumn{1}{x{5cm}|}{he system executes the operation and returns the result.}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{1b} & 
-\multicolumn{1}{x{5cm}|}{(Optional) the system uses filtering options to find the  mash-up (by source, based on properties, etc.)} & 
-\multicolumn{1}{x{5cm}|}{}\\
-\hline
-
-
-\end{tabular}
-\end{table}
-\FloatBarrier
-
-\newpage
-\subsubsection{Browse pending mash-ups and services}
-\label{subsec:pending}
-
-\begin{table}[!htpb]
-\centering
-\begin{tabular}{|c|x{1cm}x{5cm}x{5cm}|}
-\noalign{\hrule height 2pt}
-\textbf{Use Case Name} & \multicolumn{3}{c|}{Browse pending mash-ups and services}\\
-\hline
-\textbf{Use Case ID} & \multicolumn{3}{x{11cm}|}{UC2.7}\\
-\hline
-\textbf{Primary Actor} & \multicolumn{3}{c|}{Admin}\\
-\hline
-\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{OMR has been fed with service / mash-ups}\\
-\hline
-\textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{-}\\
-\hline
-\textbf{Flow of Events} & \multicolumn{1}{c|}{} & \multicolumn{1}{x{5cm}|}{Actor Input} & \multicolumn{1}{x{5cm}|}{System Response}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & 
-\multicolumn{1}{x{5cm}|}{The admin filters using facets} & 
-\multicolumn{1}{x{5cm}|}{The system executes the corresponding queries and shows the matching mash-ups and services}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{2a} & 
-\multicolumn{1}{x{5cm}|}{(Optional) The admin can request at any moment statistics about the filtering} & 
-\multicolumn{1}{x{5cm}|}{The system shows the requested statistics using charts}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{2b} & 
-\multicolumn{1}{x{5cm}|}{(The admin requests information about a mash-up / service} & 
-\multicolumn{1}{x{5cm}|}{The system gets the requested information}\\
-\hline
-
-
-\end{tabular}
-\end{table}
-\FloatBarrier
-
-\newpage
-\subsubsection{Validate a mash-up / service}
-\label{subsec:validate}
-
-
-\begin{table}[!htpb]
-\centering
-\begin{tabular}{|c|x{1cm}x{5cm}x{5cm}|}
-\noalign{\hrule height 2pt}
-\textbf{Use Case Name} & \multicolumn{3}{c|}{Validate a mash-up / service}\\
-\hline
-\textbf{Use Case ID} & \multicolumn{3}{x{11cm}|}{UC2.8}\\
-\hline
-\textbf{Primary Actor} & \multicolumn{3}{c|}{Admin}\\
-\hline
-\textbf{Pre-Condition} & \multicolumn{3}{x{11cm}|}{OMR has been fed with service / mash-ups}\\
-\hline
-\textbf{Post-Condition} & \multicolumn{3}{x{11cm}|}{Services / mash-ups validated into OMR}\\
-\hline
-\textbf{Flow of Events} & \multicolumn{1}{c|}{} & \multicolumn{1}{x{5cm}|}{Actor Input} & \multicolumn{1}{x{5cm}|}{System Response}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & 
-\multicolumn{1}{x{5cm}|}{The admin filters using facets} & 
-\multicolumn{1}{x{5cm}|}{The system executes the corresponding queries and shows the matching mash-ups and services}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{2a} & 
-\multicolumn{1}{x{5cm}|}{The admin checks the services / mash-ups wanted to be validated} & 
-\multicolumn{1}{x{5cm}|}{The system validates the services / mash-ups into OMR}\\
+\multicolumn{1}{x{5cm}|}{The client and the developers access to their Flurry acount} & 
+\multicolumn{1}{x{5cm}|}{Flurry shows all errors included with their SDK in the application}\\
 \hline
 
 \end{tabular}
 \end{table}
 \FloatBarrier
-
-\newpage
-\subsubsection{Reject a mash-up / service}
-\label{subsec:reject}
-
-\begin{table}[!htpb]
-\centering
-\begin{tabular}{|c|x{1cm}x{5cm}x{5cm}|}
-\noalign{\hrule height 2pt}
-\textbf{Use Case Name} & \multicolumn{3}{c|}{Reject a mash-up / service}\\
-\hline
-\textbf{Use Case ID} & \multicolumn{3}{x{11cm}|}{UC2.9}\\
-\hline
-\textbf{Primary Actor} & \multicolumn{3}{c|}{Admin}\\
-\hline
-\textbf{Pre-Condition} & \multicolumn{3}{x{10.5cm}|}{OMR has been fed with service / mash-ups}\\
-\hline
-\textbf{Post-Condition} & \multicolumn{3}{x{10.5cm}|}{Services / mash-ups rejected into OMR}\\
-\hline
-\textbf{Flow of Events} & \multicolumn{1}{c|}{} & \multicolumn{1}{x{5cm}|}{Actor Input} & \multicolumn{1}{x{5cm}|}{System Response}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & 
-\multicolumn{1}{x{5cm}|}{The admin filters using facets} & 
-\multicolumn{1}{x{5cm}|}{The system executes the corresponding queries and shows the matching mash-ups and services}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{2a} & 
-\multicolumn{1}{x{5cm}|}{The admin checks the services / mash-ups wanted to be rejected} & 
-\multicolumn{1}{x{5cm}|}{The system rejects the services / mash-ups into OMR}\\
-\hline
-
-\end{tabular}
-\end{table}
-\FloatBarrier
-
-
-
-\newpage
-\subsection{Web interface use case}
-This section contains a web interface use case. The client web interface interacts with the OMR in order to obtain consult the registry, which could involve service composition. This use case includes some use cases described previously, as shown in \ref{fig:pack-uc3}.
-
-\begin{itemize}
-\item \textit{request available mash-ups} detailed in \ref{subsec:requestavailable}
-\item \textit{search mash-ups by query} in \ref{subsec:searchquery}
-\item \textit{compose} is not detailed as it is part from the OMELETTE project but not part of this master thesis.
-\end{itemize}
-
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=400pt]{graphics/uc3.pdf}
-\caption{Web interface use case}
-\label{fig:pack-uc3}
-\end{figure}
-\FloatBarrier
-
-\newpage
-\subsubsection{Request available mash-ups}
-\label{subsec:requestavailable}
-
-\begin{table}[!htpb]
-\centering
-\begin{tabular}{|c|x{0.5cm}x{5cm}x{5cm}|}
-\noalign{\hrule height 2pt}
-\textbf{Use Case Name} & \multicolumn{3}{c|}{Request available mash-ups}\\
-\hline
-\textbf{Use Case ID} & \multicolumn{3}{x{10.5cm}|}{UC3.1}\\
-\hline
-\textbf{Primary Actor} & \multicolumn{3}{c|}{Web interface}\\
-\hline
-\textbf{Pre-Condition} & \multicolumn{3}{x{10.5cm}|}{Web interface requests dynamic  mash-up binding}\\
-\hline
-\textbf{Post-Condition} & \multicolumn{3}{x{10.5cm}|}{Web Interface receives a mash-up list}\\
-\hline
-\textbf{Flow of Events} & \multicolumn{1}{c|}{} & \multicolumn{1}{x{5cm}|}{Actor Input} & \multicolumn{1}{x{5cm}|}{System Response}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{1a} & 
-\multicolumn{1}{x{5cm}|}{Web Interface requests a service / mash-up.} & 
-\multicolumn{1}{x{5cm}|}{The system provides a feed with the ranking of available  mash-ups / services.}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{1b} & 
-\multicolumn{1}{x{5cm}|}{(Optional) The system does not find a matching service / mash-up and composes a new one on the fly and returns it} & 
-\multicolumn{1}{x{5cm}|}{}\\
-\hline
-
-
-\end{tabular}
-\end{table}
-\FloatBarrier
-
-\newpage
-\subsubsection{Search mash-ups by query}
-\label{subsec:searchquery}
-
-\begin{table}[!htpb]
-\centering
-\begin{tabular}{|c|x{0.5cm}x{5cm}x{5cm}|}
-\noalign{\hrule height 2pt}
-\textbf{Use Case Name} & \multicolumn{3}{c|}{Search mash-ups by query}\\
-\hline
-\textbf{Use Case ID} & \multicolumn{3}{x{10.5cm}|}{UC3.2}\\
-\hline
-\textbf{Primary Actor} & \multicolumn{3}{c|}{Web interface}\\
-\hline
-\textbf{Pre-Condition} & \multicolumn{3}{x{10.5cm}|}{Web interface requests dynamic  mash-up binding}\\
-\hline
-\textbf{Post-Condition} & \multicolumn{3}{x{10.5cm}|}{Web Interface receives a mash-up list}\\
-\hline
-\textbf{Flow of Events} & \multicolumn{1}{c|}{} & \multicolumn{1}{x{5cm}|}{Actor Input} & \multicolumn{1}{x{5cm}|}{System Response}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{1a} & 
-\multicolumn{1}{x{5cm}|}{Web Interface requests a service / mash-up.} & 
-\multicolumn{1}{x{5cm}|}{The system provides a feed with the ranking of available  mash-ups / services.}\\
-\hline
-
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{1b} & 
-\multicolumn{1}{x{5cm}|}{(Optional) The system does not find a matching service / mash-up and composes a new one on the fly and returns it} & 
-\multicolumn{1}{x{5cm}|}{}\\
-\hline
-
-
-\end{tabular}
-\end{table}
-\FloatBarrier
-
 
 \subsection{Conclusions}
 
-With the use cases described we have introduced the basic functionalities that have been implemented in this project. They help us to understand the different actors that can interact. They can serve as a base for further development and different use cases that can come to mind. They do not cover mash-up composition, this could be considered for future work lines.
+With the use cases described we have introduced the basic functionalities that have been implemented in this project. They help us to understand the different actors that can interact. They can serve as a base for further development and different use cases that can come to mind.
