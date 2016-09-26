@@ -11,11 +11,10 @@ This chapter describes one of the most important stages in software development:
 \section{Overview}
 The result of this chapter will be a complete specification of the requirements, which will be matched by each module in the design stage. This helps us also to focus on key aspects and take apart other less important functionalities that could be implemented in future works.
 
-%As commented before, our project aims to develop a personal assistance system that integrates the advantages of agent systems, information retrieval and Natural Language Processing. Our personal assistant should have the capability to solve user's questions using all of these features.
 
 \section{Use cases}
 
-These sections identify the use cases of the system. This helps us to obtain a complete specification of the uses of the system, and therefore define the complete list of requisites to match.  First, we will present a list of the actors in the system and a UML diagram representing all the actors participating in the different use cases. This representation allows, apart from specifying the actors that interact in the system, the relationships between them.
+These sections identify the use cases of the system. This helps us to obtain a complete specification of the uses of the system, and therefore define the complete list of requisites to match.  First, we will present a list of the actors that are in the system and a UML diagram representing all the actors participating in the different use cases. This representation allows, apart from specifying the actors that interact in the system, the relationships between them.
 
 These use cases will be described the next sections, including each one a table with their complete specification. Using these tables, we will be able to define the requirements to be established.
 
@@ -32,13 +31,13 @@ These use cases will be described the next sections, including each one a table 
 \noalign{\hrule height 2pt}
 \textbf{Actor identifier} & \textbf{Role} & \textbf{Description}\tn
 \hline
-ACT-1 & Gamer & End user that play the game using the physical instruments and the application\tn
+ACT-1 & Gamer & End user that plays the game using the physical instruments and the application\tn
 \hline
 ACT-2 & Instrument recognition algorithm & Algorithm that detects what physical figure has been placed on the application recognition zones\tn
 \hline
-ACT-3 & Client & Company that have outsourced the game development\tn
+ACT-3 & Client & Company that has outsourced the game development\tn
 \hline
-ACT-4 & Flurry & Tecnhology that manage application metrics and errors\tn
+ACT-4 & Flurry & Tecnhology that manages application metrics and errors\tn
 \noalign{\hrule height 2pt}
 \end{tabular}
 \caption{Actors list}
@@ -59,7 +58,7 @@ This use case package collects the game play modes and their functionalities, as
 The use cases presented in this section are as shown in the Figure \ref{fig:pack-uc1}:
 \begin{itemize}
 \item \textit{play instrument} detailed in sub-section \ref{subsec:playinstrument}.
-\item \textit{conducte orchestra} detailed in sub-section \ref{subsec:conducteorchestra}.
+\item \textit{conduct orchestra} detailed in sub-section \ref{subsec:conductorchestra}.
 \item \textit{discover instrument}  detailed in sub-section \ref{subsec:discoverinstrument}.
 \item \textit{watch demo}  detailed in sub-section \ref{subsec:watchdemo}.
 \item \textit{select melody}  detailed in sub-section \ref{subsec:selectmelody}.
@@ -95,7 +94,7 @@ The use cases presented in this section are as shown in the Figure \ref{fig:pack
 \textbf{Flow of Events} & \multicolumn{1}{c|}{} & \multicolumn{1}{x{5cm}|}{Actor Input} & \multicolumn{1}{x{5cm}|}{System Response}\\
 \hline
 
-\textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & \multicolumn{1}{x{5cm}|}{The gamer put an instrument miniature on home screen. The instrument is placed in the detection zone circle that represents the play instrument game mode} & \multicolumn{1}{x{5cm}|}{The application load the play instrument mode game with the instrument that have been placed on the screen and the default melody. }\\
+\textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & \multicolumn{1}{x{5cm}|}{The gamer puts an instrument miniature on home screen. The instrument is placed in the detection zone circle that represents the play instrument game mode} & \multicolumn{1}{x{5cm}|}{The application loads the play instrument mode game with the instrument that has been placed on the screen and the default melody. }\\
 \hline
 
 \end{tabular}
@@ -104,15 +103,15 @@ The use cases presented in this section are as shown in the Figure \ref{fig:pack
 \FloatBarrier
 
 \newpage
-\subsubsection{Conducte orchestra}
-\label{subsec:conducteorchestra}
+\subsubsection{Conduct orchestra}
+\label{subsec:conductorchestra}
 
 
 \begin{table}[!htpb]
 \centering
 \begin{tabular}{|c|x{1cm}x{5cm}x{5cm}|}
 \noalign{\hrule height 2pt}
-\textbf{Use Case Name} & \multicolumn{3}{c|}{conducte orchestra}\\
+\textbf{Use Case Name} & \multicolumn{3}{c|}{conduct orchestra}\\
 \hline
 \textbf{Use Case ID} & \multicolumn{3}{x{11cm}|}{UC1.2}\\
 \hline
@@ -126,8 +125,8 @@ The use cases presented in this section are as shown in the Figure \ref{fig:pack
 \hline
 
 \textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & 
-\multicolumn{1}{x{5cm}|}{The gamer put an instrument miniature on home screen. The instrument is placed in the detection zone circle that represents the conduct orchestra game mode} & 
-\multicolumn{1}{x{5cm}|}{The application load the conduct orchestra game mode with all instruments enabled, the family instrument selector of the family instrument that have been placed on the screen enabled, and the default melody.}\\
+\multicolumn{1}{x{5cm}|}{The gamer puts an instrument miniature on home screen. The instrument is placed in the detection zone circle that represents the conduct orchestra game mode} & 
+\multicolumn{1}{x{5cm}|}{The application loads the conduct orchestra game mode with all instruments enabled, the family instrument selector of the family instrument that has been placed on the screen enabled, and the default melody.}\\
 \hline
 
 \end{tabular}
@@ -158,8 +157,8 @@ The use cases presented in this section are as shown in the Figure \ref{fig:pack
 \hline
 
 \textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & 
-\multicolumn{1}{x{5cm}|}{The gamer put an instrument miniature on home screen. The instrument is placed in the detection zone circle that represents the discover instrument game mode} & 
-\multicolumn{1}{x{5cm}|}{The application load the discover instrument game mode with the instruments of the family instrument that have been placed on the screen. The game mode shows instrument information and sounds}\\
+\multicolumn{1}{x{5cm}|}{The gamer puts an instrument miniature on home screen. The instrument is placed in the detection zone circle that represents the discover instrument game mode} & 
+\multicolumn{1}{x{5cm}|}{The application loads the discover instrument game mode with the instruments of the family instrument that has been placed on the screen. The game mode shows instrument information and sounds}\\
 \hline
 
 \end{tabular}
@@ -190,8 +189,8 @@ The use cases presented in this section are as shown in the Figure \ref{fig:pack
 \hline
 
 \textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & 
-\multicolumn{1}{x{5cm}|}{The gamer touch Demo button with a selected melody and instrument} & 
-\multicolumn{1}{x{5cm}|}{The melody in played with the instrument selected and musical notes are highlated}\\
+\multicolumn{1}{x{5cm}|}{The gamer touches Demo button with a selected melody and instrument} & 
+\multicolumn{1}{x{5cm}|}{The melody is played with the instrument selected and musical notes are highlighted}\\
 \hline
 
 
@@ -226,7 +225,7 @@ The use cases presented in this section are as shown in the Figure \ref{fig:pack
 \hline
 
 \textbf{} & \multicolumn{1}{x{0.5cm}|}{2} & 
-\multicolumn{1}{x{5cm}|}{The gamer chose one of the avaiable melodies} & 
+\multicolumn{1}{x{5cm}|}{The gamer choses one of the available melodies} & 
 \multicolumn{1}{x{5cm}|}{Selected melody is loaded into game mode}\\
 \hline
 
@@ -259,11 +258,11 @@ The use cases presented in this section are as shown in the Figure \ref{fig:pack
 
 \textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & 
 \multicolumn{1}{x{5cm}|}{The Gamer place the instrument in the circle recognition zone} & 
-\multicolumn{1}{x{5cm}|}{The Instrument recognition algorithm process the instrument pad touches and determine which instrument have been placed}\\
+\multicolumn{1}{x{5cm}|}{The Instrument recognition algorithm processes the instrument pad touches and determines which instrument have been placed}\\
 \hline
 
 \textbf{} & \multicolumn{1}{x{0.5cm}|}{2} & 
-\multicolumn{1}{x{5cm}|}{The Instrument recognition algorithm detect a different instrument} & 
+\multicolumn{1}{x{5cm}|}{The Instrument recognition algorithm detects a different instrument} & 
 \multicolumn{1}{x{5cm}|}{Selected instrument is loaded into game mode}\\
 \hline
 
@@ -272,32 +271,33 @@ The use cases presented in this section are as shown in the Figure \ref{fig:pack
 \FloatBarrier
 
 \newpage
-\subsection{Game managment use case}
-This use case package collects the main managment use cases of the game, as shown in \ref{fig:pack-uc2}
+\subsection{Game management use case}
+\label{subsec:gamemanagement}
+This use case package collects the main management use cases of the game, as shown in \ref{fig:pack-uc2}
 
 \begin{itemize}
-\item \textit{metrics managment} detailed in subsection \ref{subsec:metricsmanagment}
-\item \textit{errors managment} detailed in subsection \ref{subsec:errorsmanagment}
+\item \textit{metrics management} detailed in subsection \ref{subsec:metricsmanagement}
+\item \textit{errors management} detailed in subsection \ref{subsec:errorsmanagement}
 \end{itemize}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=400pt]{graphics/uc2.pdf}
-\caption{Game managment use case}
+\caption{Game management use case}
 \label{fig:pack-uc2}
 \end{figure}
 
 \FloatBarrier
 
 \newpage
-\subsubsection{Metrics managment}
-\label{subsec:metricsmanagment}
+\subsubsection{Metrics management}
+\label{subsec:metricsmanagement}
 
 \begin{table}[!htpb]
 \centering
 \begin{tabular}{|c|x{1cm}x{5cm}x{5cm}|}
 \noalign{\hrule height 2pt}
-\textbf{Use Case Name} & \multicolumn{3}{c|}{Metrics managment}\\
+\textbf{Use Case Name} & \multicolumn{3}{c|}{Metrics management}\\
 \hline
 \textbf{Use Case ID} & \multicolumn{3}{x{11cm}|}{UC2.1}\\
 \hline
@@ -322,14 +322,14 @@ This use case package collects the main managment use cases of the game, as show
 \FloatBarrier
 
 \newpage
-\subsubsection{Errors managment}
-\label{subsec:errorsmanagment}
+\subsubsection{Errors management}
+\label{subsec:errorsmanagement}
 
 \begin{table}[!htpb]
 \centering
 \begin{tabular}{|c|x{1cm}x{5cm}x{5cm}|}
 \noalign{\hrule height 2pt}
-\textbf{Use Case Name} & \multicolumn{3}{c|}{Metrics managment}\\
+\textbf{Use Case Name} & \multicolumn{3}{c|}{Metrics management}\\
 \hline
 \textbf{Use Case ID} & \multicolumn{3}{x{11cm}|}{UC2.2}\\
 \hline
@@ -345,12 +345,41 @@ This use case package collects the main managment use cases of the game, as show
 \hline
 
 \textbf{} & \multicolumn{1}{x{0.5cm}|}{1} & 
-\multicolumn{1}{x{5cm}|}{The client and the developers access to their Flurry acount} & 
+\multicolumn{1}{x{5cm}|}{The client and the developers accesses to their Flurry account} & 
 \multicolumn{1}{x{5cm}|}{Flurry shows all errors included with their SDK in the application}\\
 \hline
 
 \end{tabular}
 \end{table}
+\FloatBarrier
+
+\subsection{Summary of requirements}
+After analyzing the previous use cases, some clear requirements seem to stand out. Many of
+the user cases requires similar features or certain characteristics in the architecture, pointing
+out the necessities or requirement of the system. In this section we will present those
+requirements, separated in two groups: functional and non-functional requirements.
+
+\subsubsection{Functional requirements}
+
+\begin{itemize}
+\item \textbf{FR1:} \textit{The Gamer} must be able to play three different game modes: \textit{Play instrument}, \textit{Conduct orchestra} and \textit{Discover instrument}. We can observe this requirement in use case \ref{subsec:gamemodes}
+\item \textbf{FR2:} \textit{The Gamer} must be able to watch a demo within \textit{Play instrument} game mode. We can observe this requirement in use case \ref{subsec:gamemodes}
+\item \textbf{FR3:} \textit{The Gamer} must be able to select melody within \textit{Play instrument} and \textit{Conduct orchestra} game modes. We can observe this requirement in use case \ref{subsec:gamemodes}
+\item \textbf{FR4:} \textit{The Gamer} must be able to select instrument within \textit{Play instrument}, \textit{Conduct orchestra} and \textit{Discover instrument} game modes. We can observe this requirement in use case \ref{subsec:gamemodes}
+\item \textbf{FR5:} \textit{The instrument recognition algorithm} must detect the physical instrument miniature that has been placed on the game recognition zone. We can observe this requirement in use case \ref{subsec:gamemodes}
+\item \textbf{FR6:} \textit{The client} must be able to access game metrics and errors. We can observe this requirement in use case \ref{subsec:gamemanagement}
+\item \textbf{FR7:} \textit{The developer} must be able to access game errors. We can observe this requirement in use case \ref{subsec:gamemanagement}
+\item \textbf{FR8:} \textit{Flurry} must be manage game metrics and errors. We can observe this requirement in use case \ref{subsec:gamemanagement}
+\end{itemize}
+
+\subsubsection{Non-functional requirements}
+\begin{itemize}
+\item \textbf{NFR1:} Game application screens must be user-friendly. We can observe this requirement in use case \ref{subsec:gamemodes}
+\item \textbf{NFR2:} Melody and instrument selector modules must be reusable. We can observe this requirement in use case \ref{subsec:gamemodes}
+\item \textbf{NFR3:} Instrument recognition algorithm must be robust and must have a low response time. We can observe this requirement in use case \ref{subsec:gamemodes}
+\item \textbf{NFR4:} Game metrics and error management should be private and accessible for developers and the client. We can observe this requirement in use case \ref{subsec:gamemanagement}
+\end{itemize}
+
 \FloatBarrier
 
 \subsection{Conclusions}
