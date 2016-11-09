@@ -41,7 +41,7 @@ The \textit{Instrument recognition algorithm} allows the application engine to d
 \section{Playing instrument game mode}
 \label{sec:playinginstrumentgm}
 
-In this section we are going to detail the whole application flow within the \textit{Playing instrument game mode}. This game mode is defined in the application workflow represented in figure \ref{subsec:playinstrument_arch}.
+In this section we are going to detail the whole application flow within the \textit{Playing instrument game mode}. This game mode is defined in the application workflow represented in section \ref{subsec:playinstrument_arch}.
 
 Firstly, the \textit{Gamer} has to open the application that have been previously installed on their device from either \textit{Android Play Store} or \textit{iOs App Store}. Also, the gamer must have purchased the physical instrument miniatures. These miniatures are necessary to interact with the application so that we can access to different game modes and change instruments inside them.
 
@@ -168,7 +168,86 @@ Before concluding this game mode use case, we can see the rest of instrument scr
 \section{Conducting orchestra game mode}
 \label{sec:conductingorchestragm}
 
-Conducting orchestra game mode
+In this section we are going to detail the whole application flow within the \textit{Conducting orchestra game mode}. This game mode is defined in the application workflow represented in section \ref{subsec:conducteorchestra_arch}.
+
+In order to access to this game mode, we have to proceed just as we have detailed in the previous game mode in section \ref{sec:playinginstrumentgm}.
+
+In this case, we want to access to the \textit{Conducting orchestra game mode}, so we choose one of the pieces and place it on the center white base so that we can access to the conducting orchestra game mode. After situating one of the pieces on the left white base, a new screen, shown in Figure \ref{fig:conducting_home_screen}, is opened.
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=400pt]{graphics/use-case/conducting_home_screen.jpg}
+	\caption{Conducting game mode access screen}
+	\label{fig:conducting_home_screen}
+\end{figure}
+
+\FloatBarrier
+
+In the \textit{Conducting orchestra game mode} screen shown in Figure \ref{fig:conducting_home_screen} we can see two buttons, the \textit{Home} button and the \textit{Help} button, at the top right of the screen. These buttons allow us to get to the home application screen or to show the help information for this game mode respectively.
+
+In Figure \ref{fig:help_conducting_screen} we can take a look at the help information.
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=400pt]{graphics/use-case/help_conducting_screen.jpg}
+	\caption{Help information conducting orchestra game mode}
+	\label{fig:help_conducting_screen}
+\end{figure}
+
+\FloatBarrier
+
+As we can read in the help information display, we should place the instrument miniatures on the white base, located in the center of the screen, in order to activate or deactivate an instrument family section. After activating one section, we will be able to activate or deactivate the instrument belonging to the related instrument section. After choosing the what instrument we want to be activated we can touch the \textit{Play} button to start the selected melody.
+
+When an instrument is activated, their sound will be played. So, by activating and deactivating we can conduct the musical instruments that are playing the selected melody. 
+
+Besides conducting the orchestra, we can choose the melody played by the orchestra touching the \textit{Melodies} button placed in the bottom left of the screen. The melodies available in this game mode are shown in Figure \ref{fig:conducting_melodies_screen}.
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=400pt]{graphics/use-case/conducting_melodies_screen.jpg}
+	\caption{Melodies selection in the conducting orchestra game mode}
+	\label{fig:conducting_melodies_screen}
+\end{figure}
+
+\FloatBarrier
+
+In Figure \ref{fig:conducting_all_stop_screen} we can see the \textit{Conducting orchestra game mode} screen where \textit{The Blue Danube} melody has been selected and all the instrument have been activated.
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=400pt]{graphics/use-case/conducting_all_stop_screen.jpg}
+	\caption{Conducting orchestra screen with all instruments activated}
+	\label{fig:conducting_all_stop_screen}
+\end{figure}
+
+As we can see, there is one section for each instrument miniature that we have. The relation between the pieces and the sections is described below:
+\begin{itemize}
+\item \textit{Percussion section}, which is activated after placing the \textit{percussion} family piece.
+\item \textit{Brass section}, which is activated after placing the \textit{brass} family piece.
+\item \textit{Keyboards section}, which is activated after placing the \textit{keyboards} family piece.
+\item \textit{Strings section}, which is activated after placing the \textit{strings} family piece.
+\item \textit{Woodwings section}, which is activated after placing the \textit{woodwind} family piece.
+\end{itemize}
+
+\newpage
+
+Moreover, the instruments that we can activate or deactivate within the above sections, are list below:
+\begin{itemize}
+\item \textit{Percussion section}: Drum and Xylophone.
+\item \textit{Brass section}: Horn and Trumpet.
+\item \textit{Keyboards section}: Celesta and Clavicord.
+\item \textit{Strings section}: Harp, Brass and Viola.
+\item \textit{Woodwings section}: Clarinet and FLute.
+\end{itemize}
+
+To end this use case, in Figure \ref{fig:conducting_some_screen} we can see the \textit{Conducting orchestra game mode} screen where \textit{The Blue Danube} melody is being played by the \textit{Xylophone}, the \textit{Celesta}, the \textit{Clavichord}, the \textit{Viola} and the \textit{Harp}, which are the instruments that have been activated.
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=400pt]{graphics/use-case/conducting_some_screen.jpg}
+	\caption{Conducting orchestra screen with some instruments activated}
+	\label{fig:conducting_some_screen}
+\end{figure}
 
 \newpage
 \section{Conclusions}
