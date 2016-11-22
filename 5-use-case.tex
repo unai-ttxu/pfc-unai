@@ -9,6 +9,13 @@ Firstly, we will describe the gamer interaction with the playing instrument game
 
 \section{Introduction}
 
+In the following sections we will explain two of the principal application game modes:
+
+\begin{itemize}
+\item \textit{Playing instrument game mode} detailed in section \ref{sec:playinginstrumentgm}.
+\item \textit{Conducting orchestra game mode} detailed in section \ref{sec:conductingorchestragm}.
+\end{itemize}
+
 In both use cases, two actors are involved, the gamer and the instrument recognition algorithm.
 
 \begin{table}[!htpb]
@@ -19,19 +26,12 @@ In both use cases, two actors are involved, the gamer and the instrument recogni
 \hline
 ACT-1 & Gamer & End user that plays the game using the physical instruments and the application\tn
 \hline
-ACT-2 & {Instrument recognition algorithm} & Algorithm that detects what physical figure has been placed on the application recognition zones\tn
+ACT-2 & {Instrument recognition algorithm} & Algorithm that detects which physical figure has been placed on the application recognition zones\tn
 \noalign{\hrule height 2pt}
 \end{tabular}
 \caption{Actors list}
 \label{tab:actoresusecase}
 \end{table}
-
-In the following sections we will explain two of the principal application game modes:
-
-\begin{itemize}
-\item \textit{Playing instrument game mode} detailed in section \ref{sec:playinginstrumentgm}.
-\item \textit{Conducting orchestra game mode} detailed in section \ref{sec:conductingorchestragm}.
-\end{itemize}
 
 The \textit{Gamer} is able to access to both game modes from the application home screen, using one of the physical instrument miniature. Within each game mode, the gamer is able to interact with every component in order to select other musical instrument, change melodies, play an instrument, watch a play instrument demo, choose what instruments must be playing, etc.
 
@@ -41,9 +41,9 @@ The \textit{Instrument recognition algorithm} allows the application engine to d
 \section{Playing instrument game mode}
 \label{sec:playinginstrumentgm}
 
-In this section we are going to detail the whole application flow within the \textit{Playing instrument game mode}. This game mode is defined in the application workflow represented in section \ref{subsec:playinstrument_arch}.
+In this section we are going to detail the whole application flow within the \textit{Playing instrument game mode}. This game mode has been detailed in the application workflow, represented in section \ref{subsec:playinstrument_arch}.
 
-Firstly, the \textit{Gamer} has to open the application that have been previously installed on their device from either \textit{Android Play Store} or \textit{iOs App Store}. Also, the gamer must have purchased the physical instrument miniatures. These miniatures are necessary to interact with the application so that we can access to different game modes and change instruments inside them.
+Firstly, the \textit{Gamer} has to open the application that has been previously installed on their device from either \textit{Android Play Store} or \textit{iOs App Store}. Also, the gamer must has purchased the physical instrument miniatures. These miniatures are necessary to interact with the application so that we can access to different game modes and change instruments inside them.
 
 After opening the application the home screen is loaded. We can see game home screen in Figure \ref{fig:home_screen}.
 
@@ -56,7 +56,7 @@ After opening the application the home screen is loaded. We can see game home sc
 
 \newpage
 
-By interacting with this home screen we have the possibility to access to each of the three game modes availables. In case it is our first contact with the game and we do not know how to interact with it, we can get some help touching the help button (represented with a question mark at the top left corner of the home screen). The help for the home screen is shown in Figure \ref{fig:help_home_screen}.
+By interacting with this home screen we have the possibility to access to each of the three game modes availables. In case it is our first contact with the game and we do not know how to interact with it, we can get some help touching the help button, which is represented with a question mark at the top left corner of the home screen. This help screen is shown in Figure \ref{fig:help_home_screen}.
 
 \begin{figure}[ht!]
 	\centering
@@ -65,9 +65,9 @@ By interacting with this home screen we have the possibility to access to each o
 	\label{fig:help_home_screen}
 \end{figure}
 
-As we can see in Figure \ref{fig:help_home_screen}, in order to access to one of the three game modes, we should place one of the physical instrument miniature (from now on piece) on one of the instrument recognition zones (from now on white bases). After placing it, we just have to hold and press lightly down the piece so that the application can recognize it. This recognition is processed within the \textit{Instrument recognition algorithm}. After it, we can lift the piece from the white base and place another one if we can access to another game mode if we get back the home screen.
+As we can see in Figure \ref{fig:help_home_screen}, in order to access to one of the three game modes, we should place one of the physical instrument miniature (from now on piece) on one of the instrument recognition zones (from now on white bases). After placing it, we just have to hold and press lightly down the piece so that the application can recognize it. This recognition is processed within the \textit{Instrument recognition algorithm}. After it, we can lift the piece from the white base and place another one if we want to access to another game mode after getting back to the home screen.
 
-In this case, we want to access to the \textit{Playing instrument game mode}, so we choose one of the pieces and place it on the left white base so that we can access to the play instrument game mode. In our case, we have chosen the percussion piece. After situating the percussion piece on the left white base, a new screen, shown in Figure \ref{fig:playing_xylo_start_screen}, is opened.
+In this use case, we want to access to the \textit{Playing instrument game mode}, so we choose one of the pieces and place it on the left white base so that we can access to the \textit{Playing instrument game mode}. In our case, we have chosen the percussion piece. After situating the percussion piece on the left white base, a new screen, shown in Figure \ref{fig:playing_xylo_start_screen}, is opened.
 
 \begin{figure}[ht!]
 	\centering
@@ -80,7 +80,7 @@ In this case, we want to access to the \textit{Playing instrument game mode}, so
 
 In the \textit{Playing instrument game mode} screen shown in Figure \ref{fig:playing_xylo_start_screen} we can see two buttons, the \textit{Home} button and the \textit{Help} button, at the top right of the screen. These buttons allow us to get to the home application screen or to show the help information for this game mode respectively.
 
-In Figure \ref{fig:help_playing_screen} we can take a look at the help information.
+In Figure \ref{fig:help_playing_screen} we can take a look at the help screen information.
 
 \begin{figure}[ht!]
 	\centering
@@ -100,7 +100,7 @@ As we can read in the help information display, we can put another instrument on
 \item \textit{Trombone}, which is selected after placing the \textit{brass} family piece.
 \end{itemize}
 
-Besides choosing an instrument we can choose the melody we are going to play. We can choose it after pressing the \textit{Melodies} button placed in the center of the screen. The melodies available in this game mode are shown in Figure \ref{fig:melodies_playing_screen}.
+Besides choosing an instrument we can choose the melody we are going to play. We can choose it after touching the \textit{Melodies} button placed in the center of the screen. All the melodies available in this game mode are shown in Figure \ref{fig:melodies_playing_screen}.
 
 \begin{figure}[ht!]
 	\centering
@@ -111,7 +111,7 @@ Besides choosing an instrument we can choose the melody we are going to play. We
 
 \FloatBarrier
 
-When we have decided which instrument we will play which melody with, we can touch the \textit{Demo} button positioned in the top right of the screen. By touching the \textit{Demo} button the melody will be played automatically and the musical notes will be appearing at the sheet music placed in the center of the screen.
+When we have decided which instrument we will play which melody with, we can touch the \textit{Demo} button, which is positioned in the top right of the screen. By touching the \textit{Demo} button the melody will be played automatically and the musical notes will be appearing at the sheet music placed in the center of the screen.
 
 After watching the \textit{Demo} we are ready to play the melody with the selected instrument. We can start playing the melody by touching the \textit{Play} button located at the top right of the screen. After touching the \textit{Play} button, we have to touch the instrument keys when prompted so that we can play the whole melody. In Figure \ref{fig:play_playing_screen} we can see that the key which have to be touch is the \textit{E} key, the one that is prompted. Also, we can stop the \textit{Play mode} touching the \textit{Stop} button.
 
@@ -168,11 +168,11 @@ Before concluding this game mode use case, we can see the rest of instrument scr
 \section{Conducting orchestra game mode}
 \label{sec:conductingorchestragm}
 
-In this section we are going to detail the whole application flow within the \textit{Conducting orchestra game mode}. This game mode is defined in the application workflow represented in section \ref{subsec:conducteorchestra_arch}.
+In this section we are going to detail the whole application flow within the \textit{Conducting orchestra game mode}. This game mode has been detailed in the application workflow represented in section \ref{subsec:conducteorchestra_arch}.
 
 In order to access to this game mode, we have to proceed just as we have detailed in the previous game mode in section \ref{sec:playinginstrumentgm}.
 
-In this case, we want to access to the \textit{Conducting orchestra game mode}, so we choose one of the pieces and place it on the center white base so that we can access to the conducting orchestra game mode. After situating one of the pieces on the left white base, a new screen, shown in Figure \ref{fig:conducting_home_screen}, is opened.
+In this use case, we want to access to the \textit{Conducting orchestra game mode}, so we choose one of the pieces and place it on the center white base so that we can access to the \textit{Conducting orchestra game mode}. After situating one of the pieces on the left white base, a new screen, shown in Figure \ref{fig:conducting_home_screen}, is opened.
 
 \begin{figure}[ht!]
 	\centering
@@ -248,7 +248,3 @@ To end this use case, in Figure \ref{fig:conducting_some_screen} we can see the 
 	\caption{Conducting orchestra screen with some instruments activated}
 	\label{fig:conducting_some_screen}
 \end{figure}
-
-\newpage
-\section{Conclusions}
-
