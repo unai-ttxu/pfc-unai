@@ -41,9 +41,114 @@ The application architecture will be explain in more detail in section \ref{sec:
 
 \section{Physical instruments miniatures}
 \label{sec:instrumentminuatures}
-\#Escribir sobre el diseño de los pads en las bases de las piezas para su detección (también sobre el algoritmo de detección)
+Besides the application software development, our videogame included five \textit{physical instruments miniatures}. These pieces are used by the gamer to interact with the application.
 
+The interaction is simple, the gamer place one of the pysical pieces on one of the several recognition zones displayed within the game screens. Placing these pieces, the gamer is able to select or enable an instrument belonging to the family represented by the physical miniature.
+
+As we said before, we have five pieces:
+\begin{itemize}
+\item \textit{Drum}, which represents the \textit{percussion} instrument family, shown in Figure \ref{fig:percussionpiece}.
+\item \textit{Piano}, which represents the \textit{keyboards} instrument family, shown in Figure \ref{fig:keyboardspiece}.
+\item \textit{Violin}, which represents the \textit{strings} instrument family, shown in Figure \ref{fig:stringspiece}.
+\item \textit{Flute}, which represents the \textit{woodwind} instrument family, shown in Figure \ref{fig:woodwindpiece}.
+\item \textit{Trumpet}, which represents the \textit{brass} instrument family, shown in Figure \ref{fig:brasspiece}.
+\end{itemize}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=100pt]{graphics/architecture/pieces/piecePercussion.jpg}
+	\vspace{0.6cm}
+	\includegraphics[width=100pt]{graphics/architecture/pieces/percussionBase.png}
+	\caption{Drum piece (frontal and base). It represents the percussion family}
+	\label{fig:percussionpiece}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=100pt]{graphics/architecture/pieces/pieceKeyboards.jpg}
+	\vspace{0.6cm}
+	\includegraphics[width=100pt]{graphics/architecture/pieces/keyboardsBase.png}
+	\caption{Piano piece (frontal and base). It represents the keyboards family}
+	\label{fig:keyboardspiece}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=100pt]{graphics/architecture/pieces/pieceStrings.jpg}
+	\vspace{0.6cm}
+	\includegraphics[width=100pt]{graphics/architecture/pieces/stringsBase.png}
+	\caption{Violin piece (frontal and base). It represents the string family}
+	\label{fig:stringspiece}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=100pt]{graphics/architecture/pieces/pieceWoodwind.jpg}
+	\vspace{0.6cm}
+	\includegraphics[width=100pt]{graphics/architecture/pieces/woodwindBase.png}
+	\caption{Flute piece (frontal and base). It represents the woodwind family}
+	\label{fig:woodwindpiece}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=100pt]{graphics/architecture/pieces/pieceBrass.jpg}
+	\vspace{0.6cm}
+	\includegraphics[width=100pt]{graphics/architecture/pieces/brassBase.png}
+	\caption{Trumpet piece (frontal and base). It represents the brass family}
+	\label{fig:brasspiece}
+\end{figure}
 \FloatBarrier
+
+As we see in the figures above, each figure base has three little pads. These pads are used in order to determine which piece has the gamer placed on the screen. Each piece has their pads placed in a certain position. A more detailed version of the piece bases are shown below:
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=100pt]{graphics/architecture/pieces/piecePercussion.jpg}
+	\vspace{0.6cm}
+	\includegraphics[width=100pt]{graphics/architecture/pieces/percussionBaseAngles.png}
+	\caption{Detail of the drum base}
+	\label{fig:percussionpiecedetailed}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=100pt]{graphics/architecture/pieces/pieceKeyboards.jpg}
+	\vspace{0.6cm}
+	\includegraphics[width=100pt]{graphics/architecture/pieces/keyboardsBaseAngles.png}
+	\caption{Detail of the piano base}
+	\label{fig:keyboardspiecedetailed}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=100pt]{graphics/architecture/pieces/pieceStrings.jpg}
+	\vspace{0.6cm}
+	\includegraphics[width=100pt]{graphics/architecture/pieces/stringsBaseAngles.png}
+	\caption{Detail of the violin base}
+	\label{fig:stringspiecedetailed}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=100pt]{graphics/architecture/pieces/pieceWoodwind.jpg}
+	\vspace{0.6cm}
+	\includegraphics[width=100pt]{graphics/architecture/pieces/woodwindBaseAngles.png}
+	\caption{Detail of the flute base}
+	\label{fig:woodwindpiecedetailed}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=100pt]{graphics/architecture/pieces/pieceBrass.jpg}
+	\vspace{0.6cm}
+	\includegraphics[width=100pt]{graphics/architecture/pieces/brassBaseAngles.png}
+	\caption{Detail of the trumpet base}
+	\label{fig:brasspiecedetailed}
+\end{figure}
+\FloatBarrier
+
+\#Escribir sobre el algoritmo de detección
 
 \section{Application}
 \label{sec:application}
