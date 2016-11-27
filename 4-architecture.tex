@@ -43,9 +43,13 @@ The application architecture will be explain in more detail in section \ref{sec:
 \label{sec:instrumentminuatures}
 Besides the application software development, our videogame included five \textit{physical instruments miniatures}. These pieces are used by the gamer to interact with the application.
 
-The interaction is simple, the gamer place one of the pysical pieces on one of the several recognition zones displayed within the game screens. Placing these pieces, the gamer is able to select or enable an instrument belonging to the family represented by the physical miniature.
+The interaction is simple, the gamer place one of the pysical pieces on one of the several recognition zones displayed within the game screens. Placing these pieces, the gamer is able to select or enable an instrument belonging to the family represented by the physical miniature. These pieces will be detailed in section \ref{subsec:piecesdetailed}.
 
-As we said before, we have five pieces:
+The application has to determine what piece has the gamer placed on the screen. The responsable for that is the \textit{detection algorithm} which will be explained in section \ref{subsec:recognitionalgorithm}.
+
+\subsection{Physical instrument pieces}
+\label{sec:piecesdetailed}
+We have five pieces, listed below:
 \begin{itemize}
 \item \textit{Drum}, which represents the \textit{percussion} instrument family, shown in Figure \ref{fig:percussionpiece}.
 \item \textit{Piano}, which represents the \textit{keyboards} instrument family, shown in Figure \ref{fig:keyboardspiece}.
@@ -146,10 +150,37 @@ As we see in the figures above, each figure base has three little pads. These pa
 	\caption{Detail of the trumpet base}
 	\label{fig:brasspiecedetailed}
 \end{figure}
+
 \FloatBarrier
 
-\#Escribir sobre el algoritmo de detección
+As we can see in the above figures, the three pads located in the pieces bases create a triangle. Each piece creates a different triangle with the following angles:
+\begin{itemize}
+\item \textit{Drum base}, whose triangle has three 60\textdegree\xspace angles, shown in Figure \ref{fig:percussionpiecedetailed}.
+\item \textit{Piano base}, whose triangle has two 30\textdegree\xspace angles and one 120\textdegree\xspace angle and two 30\textdegree\xspace angles, shown in Figure \ref{fig:keyboardspiecedetailed}.
+\item \textit{Violin base}, whose triangle has two 45\textdegree\xspace angles and one 90\textdegree\xspace angle, shown in Figure \ref{fig:stringspiecedetailed}.
+\item \textit{Flute base}, whose triangle has one 30\textdegree\xspace angle and two 75\textdegree\xspace angles, shown in Figure \ref{fig:woodwindpiecedetailed}.
+\item \textit{Trumpet base}, whose triangle has one 40\textdegree\xspace angle, one 60\textdegree\xspace angle and one 80\textdegree\xspace angle, shown in Figure \ref{fig:brasspiecedetailed}.
+\end{itemize}
 
+Using these angles information the recognition algorithm will be able to determine the placed piece.
+
+\newpage
+\subsection{Recognition algorithm}
+\label{sec:recognitionalgorithm}
+As we have detailed in the previous section, each piece is defined by the triangles on their base. As we know, each triangle is defined by their three angles.
+
+In order to determine the placed piece, we have to calculate the angles of the triangle formed by the three pads located in the figure base.
+
+We can see the recognition algorithm in Figure \ref{fig:detectionalgorithm}.
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=400pt]{graphics/architecture/DetectionAlgorithm.pdf}
+	\caption{Detection algorithm diagram}
+	\label{fig:detectionalgorithm}
+\end{figure}
+
+\newpage
 \section{Application}
 \label{sec:application}
 The application is the biggest module of the game. It includes the whole software development as it is shown in Figure \ref{fig:applicationarchitecture}.
