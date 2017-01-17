@@ -43,9 +43,9 @@ The application architecture will be explain in more detail in section \ref{sec:
 \label{sec:instrumentminuatures}
 Besides the application software development, our videogame included five \textit{physical instruments miniatures}. These pieces are used by the gamer to interact with the application.
 
-The interaction is simple, the gamer place one of the pysical pieces on one of the several recognition zones displayed within the game screens. Placing these pieces, the gamer is able to select or enable an instrument belonging to the family represented by the physical miniature. These pieces will be detailed in section \ref{subsec:piecesdetailed}.
+The interaction is simple, the gamer place one of the physical pieces on one of the several recognition zones displayed within the game screens. Placing these pieces, the gamer is able to select or enable an instrument belonging to the family represented by the physical miniature. These pieces will be detailed in section \ref{sec:piecesdetailed}.
 
-The application has to determine what piece has the gamer placed on the screen. The responsable for that is the \textit{detection algorithm} which will be explained in section \ref{subsec:recognitionalgorithm}.
+The application has to determine what piece has the gamer placed on the screen. The responsible for that is the \textit{detection algorithm} which will be explained in section \ref{sec:recognitionalgorithm}.
 
 \subsection{Physical instrument pieces}
 \label{sec:piecesdetailed}
@@ -179,6 +179,14 @@ We can see the recognition algorithm in Figure \ref{fig:detectionalgorithm}.
 	\caption{Detection algorithm diagram}
 	\label{fig:detectionalgorithm}
 \end{figure}
+
+If we look at \ref{fig:detectionalgorithm}, we can see how the piece if recognized by the application. This recognition could be divided within three steps:
+
+\begin{enumerate}
+	\item The gamer has to place the piece on the recognition zone. When the three pads located in the piece base touch the screen, these pads coordinates $\Bigl(\begin{smallmatrix} x_1&y_1 \\ x_2&y_2 \\ x_3&y_3 \end{smallmatrix} \Bigr)$ are sent to the detection algorithm.
+	\item The detection algorithm calculate the angles of a triangle build using the three coordinates given by the piece base.
+	\item The detection algorithm compare the calculated triangle with the figure's defined triangles. After it, we retrieve the piece whose base triangle match the calculated one.
+\end{enumerate}
 
 \newpage
 \section{Application}
