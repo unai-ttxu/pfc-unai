@@ -6,7 +6,8 @@ This chapter introduces which technologies have made possible this project. Firs
 \end{chapterintro}
 
 \cleardoublepage
-\section{unity}
+\section{Unity3d game engine}
+\label{sec:unity}
 In the current Web, developers enjoy the availability of plenty of services and widgets that can be reused to build new web applications. This ecosystem of reusable web components comprises elements such as data feeds of various domains, telco services or desktop and mobile widgets. Additionally, there is a growing set of tools for the creation of mash-ups such as MyCocktail~\cite{iglesias2011combining} or mashArt~\cite{daniel2009hosted} that facilitate developers in the combination of services into new applications. Also, Programmable Web, Yahoo Pipes or Opera widgets are examples of registries that reference services and widgets of many different kinds. Users can query them in order to search useful applications and services that they can reuse for mash-up composition.
 
 However, developers face some difficulties when working on development of mash-ups. 
@@ -24,7 +25,7 @@ The main goal of this project is to create an interface that permits the develop
 The repository is fed automatically using automated discovery techniques. These techniques are described in section \ref{sec:enableautomated} and exposed those existing websites on the Internet where the automatic algorithms fetch the data from.
 
 \section{OMELETTE mash-up Registry}
-\label{sec:enableomr}
+\label{sec:othercomponents}
 
 The Omelette mash-up Registry (OMR) has a component model that aggregates necessary information for querying web components and searching the most appropriate ones. Additionally, this model reuses other underlying standards, such as WSMO, WSDL, WADL or W3C widgets, as low-level grounding standard description languages that allow components to be readily executable by referencing to them whenever available. These descriptions are built automatically, when possible, in a discovery phase that allows populating the registry with new reusable software artefacts from the Web.
 
