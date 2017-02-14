@@ -24,7 +24,7 @@ Between all these development tools, Unity3D stands out due its soft learning cu
 
 Moreover, Unity3D facilitate the management of some critical aspects within videogame development such as images, audios, shadows, physics, network and animations. Furthermore, Unity3D Asset Store, which is driven by Unity3D community, include community plugins which give us an added value.
 
-The proposal of this project is to exemplify the development of a multi-platform mobile musical training software for children using the framework Unity3D Engine 
+The proposal of this project is to exemplify the development of a multi-platform mobile musical training software for children using the framework Unity3D Engine.
 
 \section{Master thesis description}
 
@@ -36,35 +36,34 @@ Firstly, the gamer will have the possibility to play one instrument of the selec
 
 The multi-platform game development includes all the following development stages:
 \begin{itemize}
-\item \textit{Requirement analysis}, in order to obtain the requisites given by the client for the game application.
-\item \textit{Architecture design}, which represents the \textit{keyboards} instrument family, shown in Figure \ref{fig:keyboardspiece}.
-\item \textit{Violin}, which represents the \textit{strings} instrument family, shown in Figure \ref{fig:stringspiece}.
-\item \textit{Flute}, which represents the \textit{woodwind} instrument family, shown in Figure \ref{fig:woodwindpiece}.
-\item \textit{Trumpet}, which represents the \textit{brass} instrument family, shown in Figure \ref{fig:brasspiece}.
+\item \textit{Requirement analysis}, determining the needs or conditions to meet for the game application.
+\item \textit{Architecture design}, defining a structured solution that meets all of the application requirements.
+\item \textit{Physical instrument pieces design}, creating the physical pieces that will be used to interact with the application.
+\item \textit{Software implementation}, building the multi-platform game using Unity3D engine.
+\item \textit{Software test}, testing the application to check if it accomplish the acceptance criteria.
+\item \textit{Application deployment}, deploying the application to the needed application markets.
 \end{itemize}
 
+Within application architecture we can distinguish the following modules:
 
 \begin{description}
 
-\item[OMELETTE mash-up Registry]  is the element that registers components for their usage by the rest of elements in the OMELETTE platform. A component can be a mash-up, a service, or a widget. Component descriptions and accompanying binary content will be stored in the OMR so that other elements from the OMELETTE architecture can query the OMR for them and use them. To describe components, a unified RDF component model has been defined. This unified component model provides a unified way to query components and identify, e.g., appropriate widgets for composition, interesting new services to be used when creating a widget, or relevant mash-ups of a particular domain.
+\item[Unity3D engine] is a cross-platform game engine developed by Unity Technologies and used to develop video games for PC, consoles, mobile devices and websites. Unity is notable for its ability to target games to multiple platforms. Within a project, developers have control over delivery to mobile devices, web browsers, desktops, and consoles. Supported platforms include Android, Apple TV, BlackBerry 10, iOS, Linux, Nintendo 3DS line, macOS, PlayStation 4, PlayStation Vita, Unity Web Player (including Facebook), Wii, Wii U, Windows Phone 8, Windows, Xbox 360, and Xbox One
 
-\item[Automatic Discoverer] is the system responsible for populating the OMR with up-to-date components. In the current Web plenty of services and widgets are released every day, and developers need to be aware of these services in order to build state-of-the-art mash-ups. To achieve this, a module that crawls service and widget repositories registries these components into the OMR. This automatic discoverer produces semantic descriptions of the components found in the Web out of the unstructured HTML documents they are contained into.
+\item[Unity Asset Store] is where a growing library of free and commercial assets are placed. These assets are created both by Unity Technologies and also members of the community. A wide variety of assets is available, covering everything from textures, models and animations to whole project examples, tutorials and Editor extensions. These assets are accessed from a simple interface built into the Unity Editor and are downloaded and imported directly into your project.
 
-\item[OMR admin interface] will allow to organize the components fetched by the automatic discoverer. Some of the components inserted into the OMR might be undesirable, and the administrator user within the admin interface will be responsible filter them.
-
-\item[Web developer interface] will be used by final developer users allowing them to query by needs and recommending other services by using semantic search technologies.
+\item[Flurry Analytics] enable users to analyze consumer behavior through data observations. The platform provides features for user segmentation, consumer funnels, and applications portfolio analysis. The platform's funnels measure customized consumer conversions and trending metrics, while the portfolio analytics feature allows companies to manage entire portfolios of mobile applications with the ability to monitor data about overlap among applications as well as up-sell and cross-sell conversions.
 
 \end{description}
 
 \section{Master thesis goals}
 \label{sec:masterthesisgoals}
 
+The main purpose of this master thesis is to a multi-platform mobile musical training software for children using the framework Unity3D Engine.
 
-The main purpose of this master thesis is to have a \textbf{repository} of widgets and services to build new mash-ups. First we need to \textbf{feed the repository} and we have to do it automatically using discovery techniques. The content fetched from the internet must be \textbf{structured} before it is inserted into the repository and therefore the repository has to be able to store the data with the same structure, this is done using \textbf{semantic repositories}.
+This process includes the \textbf{requirement analysis} and the \textbf{architecture design}. Due to the need of physical pieces to interact with the application the build process also include the \textbf{physical instrument pieces design}. After building the game application it has to go through previously designed \textbf{software tests} to check it fits the requirements obtained in the previous stages.
 
-All the information stored in the repository has to be \textbf{managed} manually by an administrator. This is the main goal of this master thesis, create an administration interface that permits an administrator user chose which widgets and services automatically fetched and stored are useful. The administrator interface will provide several tools to the administrator user and will use \textbf{ranking} algorithms to help him decide which ones are usefull.
-
-Finally, there is a web interface for final users that will allow them find services and services using semantic search technologies.
+Finally, the application should be deployed to Android and iOs application markets to let users to download and use it, as long as the development team and the client would retrieve metrics and other information about the application use.
 
 
 \section{Structure of this Master Thesis}
@@ -72,17 +71,17 @@ Finally, there is a web interface for final users that will allow them find serv
 In this section we will provide a brief overview of all the chapters of this Master Thesis. It
 has been structured as follows:
 
-\textit{Chapter 1} provides an introduction to the problem which will be approached in this project. It provides an overview of the benefits of mash-ups and linked data technologies. Furthermore, a deeper description of the project and its environment is also given.
+\textit{Chapter 1} provides an introduction to the problem which will be approached in this project. It provides an overview of the benefits of Unity3D engine. Furthermore, a deeper description of the project and its environment is also given.
 
 \textit{Chapter 2} contains an overview of the existing technologies on which the development of the project will rely.
 
 \textit{Chapter 3} describes one of the most important stages in software development: the requirement analysis using different scenarios. For this, a detailed analysis of the possible use cases is made using the Unified Modeling Language (UML). This language allows us to specify, build and document a system using graphic language.
 The result of this evaluation will be a complete specification of the requirements, which will be matched by each module in the design stage. This helps us also to focus on key aspects and take apart other less important functionalities that could be implemented in future works.
 
-\textit{Chapter 4} describes the architecture of the system, dividing it into 3 groups and differencing front-end and back-end modules.
+\textit{Chapter 4} describes the architecture of the system, dividing it into two groups and differencing application software development and physical instrument pieces design.
 
-\textit{Chapter 5} describes a selected use case. It is going to be explained the running of all the tools involved and its purpose. It is based on how to crawl the web to find new mash-ups, then feed the repository, do the validation and rejections of the mash-ups, and finally the developer will be able to use the discovered services.
+\textit{Chapter 5} describes a selected use case. It is going to be explained the interaction with the whole game going through two of its game modes.
 
-\textit{Chapter 6} sums up the findings and conclusions found throughout the document and gives a hint about future development to continue the work done for this master thesis.
+\textit{Chapter 6} sums up the findings and conclusions found throughout the document and gives a hint about the work done for this master thesis.
 
-Finally, the appendix provide useful related information, especially covering the installation and configuration of the tools used in this thesis.
+Finally, the appendix provide useful related information, especially covering the application screens.
