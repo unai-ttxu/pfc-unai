@@ -6,30 +6,18 @@ This chapter introduces which technologies have made possible this project. Firs
 \end{chapterintro}
 
 \cleardoublepage
-\section{Unity3d game engine}
+\section{Unity3D game engine}
 \label{sec:unity}
-In the current Web, developers enjoy the availability of plenty of services and widgets that can be reused to build new web applications. This ecosystem of reusable web components comprises elements such as data feeds of various domains, telco services or desktop and mobile widgets. Additionally, there is a growing set of tools for the creation of mash-ups such as MyCocktail~\cite{iglesias2011combining} or mashArt~\cite{daniel2009hosted} that facilitate developers in the combination of services into new applications. Also, Programmable Web, Yahoo Pipes or Opera widgets are examples of registries that reference services and widgets of many different kinds. Users can query them in order to search useful applications and services that they can reuse for mash-up composition.
+Today’s game creators rely on game engines to develop the main pieces of software for their games. A game engine simplifies the task of the programmers by offering convenient abstractions for the hardware and operating systems on top of which the game runs.~\cite{messaoudi2015dis}
 
-However, developers face some difficulties when working on development of mash-ups. 
+Gamers play on so many different types of devices which have lots of differences regarding their hardware and software resources. One of the main purposes of a game engine is to make this development easier avoiding building one application for each device we want to be compatible with.
 
-First, it is not easy for a developer to find the most appropriate services for a mash-up she is building, as although many of them are available but the information might be scattered across various repositories in the web in different formats on multiple levels of granularity.
+Unity3D game engine is an integrated development tool for producing other interactive contents such as video game, architectural visualization, real -time 3D animation. Its editor runs on Window, Mac OS X, so it could make games as the platforms of Window, Mac, Wii, iPad, and iPhone. It could also produce web browser game that uses unity web player plug-in.~\cite{kim2014dev}
 
-Second, services are annotated using different description standards and semantics, thus requiring deep study of the documentation by the developer.
-
-Third, due to this lack of consistent standardized descriptions, services need to be adapted in order to be used in a mash-up platform. 
-
-This master thesis describes the creation of a searchable repository populated with services and widgets that will serve in wich a developer user will be able to find those components that he needs to create new mash-ups.
-
-The main goal of this project is to create an interface that permits the developer fulfil his requisites finding the suitable services or widgets in the repository. To create this interface first there must be a repository and this repository must have widgets and services. The structure and the functionalities that this repository must have are described in section \ref{sec:enableomr} and we call it the OMELETTE mash-up Registry (OMR).
-
-The repository is fed automatically using automated discovery techniques. These techniques are described in section \ref{sec:enableautomated} and exposed those existing websites on the Internet where the automatic algorithms fetch the data from.
+Unity3D is a flexible and high-performance development platform used to make creative and intelligent interactive 3D and 2D experiences. The "author once, deploy everywhere" capability ensures developers can publish to all of the most popular platforms. Unity Technologies boasts a thriving community of over 2 million developers including large publishers, indie studios, students and hobbyists. To remain at the forefront of innovation, Unity Technologies tirelessly re-invests in its award-winning 3D development tools and its democratization initiatives, such as the Asset Store digital content marketplace and Unity Games publishing and distribution division.~\cite{unity2013press}
 
 \section{Unity Asset Store}
 \label{sec:assetstore}
-
-The Omelette mash-up Registry (OMR) has a component model that aggregates necessary information for querying web components and searching the most appropriate ones. Additionally, this model reuses other underlying standards, such as WSMO, WSDL, WADL or W3C widgets, as low-level grounding standard description languages that allow components to be readily executable by referencing to them whenever available. These descriptions are built automatically, when possible, in a discovery phase that allows populating the registry with new reusable software artefacts from the Web.
-
-Components stored in the OMR use the Linked mash-ups Ontology (LiMOn) RDF model~\cite{limon}.
 
 
 \subsection{Flurry analytics}
