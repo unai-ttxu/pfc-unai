@@ -1,3 +1,0 @@
-pmoncada@lisa:/omr-admin/cache$ ls
-07dd77d2e719486edf4c3fadd73bc57e.cache  607674268eb15fddb1f3f68966e60d8f.cache  afaef680863102e8717d8cf653607b00.cache
-08e71b54c1ba078409a63b0514e05e5e.cache  63d0c0b4fddb2233ca11be1b05a90ff5.cache  b169c9805f3617f2bc54934dbca3f60f.cache
