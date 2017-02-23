@@ -31,20 +31,20 @@ We will detail Unity3D concepts and how those concepts will be integrated in the
 \label{subsec:unityfeatures}
 The latest update, Unity 4.6, was released in August, 2012. It currently supports development for iOS, Android, Windows, OS X, Linux, web browsers, Flash, PlayStation 3, Xbox 360, and Wii U.~\cite{unitypress2} The game engine can be downloaded from their website in two different versions: Unity and Unity Pro. Between its features we can point highlight the following:
 \begin{itemize}
-\item \textit{Rendering}, The graphics engine uses Direct3D (Windows), OpenGL (Mac, Windows,
+\item \textbf{Rendering}, The graphics engine uses Direct3D (Windows), OpenGL (Mac, Windows,
 Linux), OpenGL ES (Android, iOS), and proprietary APIs (Wii). There is support for bump mapping, reflection mapping, parallax mapping, screen space ambient occlusion (SSAO), dynamic shadows using shadow maps, render-to-texture and full-screen post-processing effects.
 Unity supports art assets and file formats from 3ds Max, Maya, Softimage, Blender, Modo, ZBrush, Cinema 4D, Cheetah3D, Adobe Photoshop, Adobe Fireworks and Allegorithmic Substance. These assets can be added to the game project, and managed through Unity's graphical user interface.~\cite{unitypress3}
 The ShaderLab language is used for shaders, supporting both declarative "programming" of the fixed-function pipeline and shader programs written in GLSL or Cg. A shader can include multiple variants and a declarative fallback specification, allowing Unity to detect the best variant for the current video card, and if none are compatible, fall back to an alternative shader that may sacrifice features for performance.~\cite{unitypress4}
-\item \textit{Scripting}, The game engine's scripting is built on Mono, the open-source implementation
+\item \textbf{Scripting}, The game engine's scripting is built on Mono, the open-source implementation
 of the .NET Framework. Programmers can use UnityScript (a custom language with ECMAScript-inspired syntax), C\# or Boo (which has a Python-inspired syntax).~\cite{unitypress5} Starting with the 3.0 release, Unity ships with a customized version of MonoDevelop for debugging scripts.~\cite{unitypress6}
-\item \textit{Asset Tracking}, Unity also includes the Unity Asset Server, a version control solution for the developer's game assets and scripts. It uses PostgreSQL as a backend, an audio system built on the FMOD library (with ability to playback Ogg Vorbis compressed audio), video playback using the Theora codec, a terrain and vegetation engine (which supports tree billboarding, Occlusion Culling with Umbra), built-in lightmapping and global illumination with Beast, multiplayer networking using RakNet, and built-in pathfinding navigation meshes.~\cite{unitypress7}
-\item \textit{Platforms}, Unity supports deployment to multiple platforms. Within a project, developers
+\item \textbf{Asset Tracking}, Unity also includes the Unity Asset Server, a version control solution for the developer's game assets and scripts. It uses PostgreSQL as a backend, an audio system built on the FMOD library (with ability to playback Ogg Vorbis compressed audio), video playback using the Theora codec, a terrain and vegetation engine (which supports tree billboarding, Occlusion Culling with Umbra), built-in lightmapping and global illumination with Beast, multiplayer networking using RakNet, and built-in pathfinding navigation meshes.~\cite{unitypress7}
+\item \textbf{Platforms}, Unity supports deployment to multiple platforms. Within a project, developers
 have control over delivery to mobile devices, web browsers, desktops, and consoles.~\cite{unitypress2}
 Unity also allows specification of texture compression and resolution settings for each platform the game supports.~\cite{unitypress2}
 Currently supported platforms include Windows, Linux, Mac, Android, iOS, Unity Web Player, Adobe Flash, PlayStation 3, Xbox 360, and Wii. Although not officially confirmed, Unity also supports the PlayStation Vita as can be seen on the game Escape Plan. Upcoming platforms include BlackBerry 10, Wii U, Windows 8, and Windows Phone 8.
-\item \textit{Asset Store}, Launched in November 2010, the Unity Asset Store is a resource available
+\item \textbf{Asset Store}, Launched in November 2010, the Unity Asset Store is a resource available
 within the Unity editor. The store consists of a collection of over 4,400 asset packages, including 3D models, textures and materials, particle systems, music and sound effects, tutorials and projects, scripting packages, editor extensions and online services. We will detail this feature in section \ref{sec:assetstore}. The store also contains many extensions, tools and asset packages such as the package 2D Toolkit, which provides an efficient \& flexible 2D sprite, collider set-up, text, tilemap and UI system integrating seamlessly into the Unity environment.
-\item \textit{Versions}, The first version of Unity was launched at Apple’s Worldwide Developers Conference in 2005. It was built to function and build projects on Mac computers and garnered enough success to continue development of the engine and tools for other platforms.[2] Unity 3 was released in September 2010 and focused on introducing more of the tools that high-end studios have at their disposal. This allowed the company to capture the interest of bigger developers while providing independent and smaller teams with a game engine in one affordable package. The latest version of Unity, Unity 4.6, was released in August 2014, and includes features such as New UI System: Design UIs for your game or application using Unity's powerful new component based UI framework and visual tools and an extensible event messaging system.
+\item \textbf{Versions}, The first version of Unity was launched at Apple’s Worldwide Developers Conference in 2005. It was built to function and build projects on Mac computers and garnered enough success to continue development of the engine and tools for other platforms.[2] Unity 3 was released in September 2010 and focused on introducing more of the tools that high-end studios have at their disposal. This allowed the company to capture the interest of bigger developers while providing independent and smaller teams with a game engine in one affordable package. The latest version of Unity, Unity 4.6, was released in August 2014, and includes features such as New UI System: Design UIs for your game or application using Unity's powerful new component based UI framework and visual tools and an extensible event messaging system.
 \end{itemize}
 
 \subsection{Unity3D concepts}
@@ -53,18 +53,18 @@ within the Unity editor. The store consists of a collection of over 4,400 asset 
 In this subsections, we are going to explain the Unity3D basic concepts, which are the following:
 
 \begin{itemize}
-\item \textit{Assets}, Assets are the actual contents we use to shape our own Unity world. Usually, most of the Assets are created using external software and then imported into the project.
+\item \textbf{Assets}, Assets are the actual contents we use to shape our own Unity world. Usually, most of the Assets are created using external software and then imported into the project.
 On their own they are no more than media content files: 3d models, textures, audio files, scripts and so on. 
 In order to exist in our product the Assets need to be included inside a Unity Scene.
-\item \textit{Scenes}, A Scene is a self-contained 3d space where all the action happens. Every Unity Project needs to have at least one Scene. Without it, the project will be just a pile of stored Assets because they have no place to actually exist.
+\item \textbf{Scenes}, A Scene is a self-contained 3d space where all the action happens. Every Unity Project needs to have at least one Scene. Without it, the project will be just a pile of stored Assets because they have no place to actually exist.
 Most project will have multiple Scenes. The most common use of Scenes in game development is to create different levels inside a game, however this will largely depend on the project specifications and design. Although it may have as many as necessary, it is important to state that only one Scene is active and running at a given time.
 So, Scenes are the 3d space where Assets can exist. But, to include the Assets on a Scene we need GameObjects.
-\item \textit{Game Objects}, A GameObject is the base entity of our Scene. If we want anything to exist on our Scene it needs has to be a GameObject. But by itself is no more than that. It just represents something that exists inside our 3d world and that’s it.
+\item \textbf{Game Objects}, A GameObject is the base entity of our Scene. If we want anything to exist on our Scene it needs has to be a GameObject. But by itself is no more than that. It just represents something that exists inside our 3d world and that’s it.
 If a GameObject wants to be something more it needs to have Components.
-\item \textit{Components}, A Component is responsible for assigning roles, properties and/or behaviors to GameObjects. It is the smallest building block on our world and by far the most important one.
+\item \textbf{Components}, A Component is responsible for assigning roles, properties and/or behaviors to GameObjects. It is the smallest building block on our world and by far the most important one.
 For example, If we want a GameObject to represent a Light in our Scene we just attach it a Light Component. If it is a static rock in our environment we attach the necessary Components for it to be a rock (we need to display the rock shape and texture and maybe a collision box). If we need a more complex GameObject such as our Player Avatar, we would need to attach a component for its’ shape, textures and all his behaviors.
 So as you can see, according to the Component type (and believe me they are many) we can attach assets to our GameObjects, define properties, assign behaviors scripts and so on.
-\item \textit{Prefab}, A Prefab is a template for a GameObject. It allows us to store a GameObject with Components and Properties already set. We can even store a full hierarchy of GameObjects, all with their own Components and default values. 
+\item \textbf{Prefab}, A Prefab is a template for a GameObject. It allows us to store a GameObject with Components and Properties already set. We can even store a full hierarchy of GameObjects, all with their own Components and default values. 
 \end{itemize}
 
 \subsection{Unity3D interface}
@@ -81,17 +81,102 @@ When we create a project, the first thing we see is Unity3D interface. This inte
 In figure \ref{fig:unity_interface_general} we can differentiate five principal areas:
 
 \begin{itemize}
-\item \textit{Area 1 (Scene)}, this area contains the scene we are editing. This is the zone where we we will create and place the graphic components of the scene.
-\item \textit{Area 2 (Game)}, in this window we will obtain the pre-visualization of the scene in execution. When we want to execute the scene, we have just to click that play button that is located in the top. We are also able to pause and a stop that execution with Pause and Stop buttons.
-\item \textit{Area 3 (Project)}, it defines our project resources structure. It is divided into two parts. The left one shows all the folders that contains our project resources. In our case everything is structured around a folder called Assets. The right one shows the selected folder's content. We can also move archives to our project dragging them to this area.
-\item \textit{Area 4 (Hierarchy)}, this area shows our scene hierarchy. Here every object included in the scene will appear.
-\item \textit{Area 5 (Inspector)}, using this window we will be able to see and edit the selected object's properties.
+\item \textbf{Area 1 (Scene)}, this area contains the scene we are editing. This is the zone where we we will create and place the graphic components of the scene.
+\item \textbf{Area 2 (Game)}, in this window we will obtain the pre-visualization of the scene in execution. When we want to execute the scene, we have just to click that play button that is located in the top. We are also able to pause and a stop that execution with Pause and Stop buttons.
+\item \textbf{Area 3 (Project)}, it defines our project resources structure. It is divided into two parts. The left one shows all the folders that contains our project resources. In our case everything is structured around a folder called Assets. The right one shows the selected folder's content. We can also move archives to our project dragging them to this area.
+\item \textbf{Area 4 (Hierarchy)}, this area shows our scene hierarchy. Here every object included in the scene will appear.
+\item \textbf{Area 5 (Inspector)}, using this window we will be able to see and edit the selected object's properties.
 \end{itemize}
 
 \section{Unity Asset Store}
 \label{sec:assetstore}
 
 The Unity Asset Store is home to a growing library of free and commercial assets created both by Unity Technologies and also members of the community. A wide variety of assets is available, covering everything from textures, models and animations to whole project examples, tutorials and Editor extensions. The assets are accessed from a simple interface built into the Unity Editor and are downloaded and imported directly into your project.~\cite{unitypress8}
+
+In the following subsections, we are going to detail the four plugins we are using in our development and why we have chosen them:
+
+\subsection{2D Toolkit}
+\label{subsec:2dtoolkit}
+We decided to use this asset due to the game was designed to be built in a two dimensional space. Although Unity3D 4.3 version introduced A new native 2D toolset, 2D Toolkit provide developers additional features and benefits.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=200pt]{graphics/enabling-tech/2dtoolkit_logo.jpg}
+\caption{2D Toolkit logo}
+\label{fig:2dtoolkit_logo}
+\end{figure}
+
+2D Toolkit works in harmony with Unity's 2D features, complements and expands upon it in many ways. The package is actively developed and is designed to put more power in the hands of the 2D game developer, and blend seamlessly into Unity.~\cite{2dtoolkit1}. These additional features are the following:
+
+\begin{itemize}
+\item \textit{Painless handling of multiple device resolutions}, 2D Toolkit provides several tools, such as a special camera component (called tk2dCamera), and multi platform textures (e.g. for high density Retina devices) to almost completely eliminate the hassle around creating games for many devices.
+These tools help us to create pixel perfect scenes with automatic texture swapping for 1x, 2x and 4x resolutions. These changes are transparent to us, so your code stays clean as we don't have to reposition anything.
+\item \textit{Advanced atlasing features}, 2D Toolkit's advanced atlasing (fully supported in both Unity Free and Pro) allows for some game changing optimizations. For example, large sprites and background images can be automatically diced up into smaller pieces. Duplicate dices and empty space is removed, potentially saving large amounts of atlas space.
+\item \textit{Decreased build sizes with png textures}, 2D Toolkit allows us to significantly decrease the space needed to store your textures, by providing an easy one click configuration that tells Unity to store the images as PNG files.
+\item \textit{Easy and flexible animation editor}, We may choose to create your animations using Unity's new 2D animation editor, or the animation editor provided by 2D Toolkit. We may even choose to mix and match, as each of these approaches provides certain advantages for various workflows and use cases.
+\item \textit{Increase performance with sprite batching}, When creating backgrounds with many elements, 2D Toolkit lets we group these elements together so that they are drawn together, using less resources. This can significantly improve performance, especially on mobile devices.
+\end{itemize}
+
+\subsection{HOTween}
+\label{subsec:hotween}
+We decided to include HOTween asset because we need to build hundreds of animations within our application. And thanks to HOTween these animation management become easier.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=200pt]{graphics/enabling-tech/hotween_logo.png}
+\caption{HOTween logo}
+\label{fig:hotween_logo}
+\end{figure}
+
+HOTween is a fast, type-safe object-oriented tween engine for Unity, compatible with all of Unity's scripting languages.~\cite{hotween1}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=400pt]{graphics/enabling-tech/hotween_arch.jpg}
+\caption{HOTWeen flow diagram}
+\label{fig:hotween_arch}
+\end{figure}
+
+Also, HOTween works on Windows, Windows Phone 8, Windows 8 Store, Mac, iOS, Android.
+
+\subsection{iOs native plugin}
+\label{subsec:iosplugin}
+iOs Native plugin, allow us to combine all native iOs features we need in one plugin, making it usage as easy as possible. Some of their principal features are the following:~\cite{iosnative1}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=200pt]{graphics/enabling-tech/iOsnative_logo.png}
+\caption{iOS native plugin logo}
+\label{fig:iOsnative_logo}
+\end{figure}
+
+\begin{itemize}
+\item In-App purchases support
+\item iCloud API management
+\item Game Center integration
+\item Video management
+\item iOS native events
+\end{itemize}
+
+\subsection{Android plugin}
+\label{subsec:androidplugin}
+Android Native plugin, provides the easy and  flexible functionality of Android native functions, including in-app purchases, play service, advertising and native device API. Some of their principal features are the following:~\cite{androidnative1}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=200pt]{graphics/enabling-tech/androidnative_logo.jpeg}
+\caption{Android native plugin logo}
+\label{fig:androidnative_logo}
+\end{figure}
+
+\begin{itemize}
+\item Play Service support
+\item Social networks integration
+\item Push Notifications
+\item Immersive Mode
+\item Android native events
+\end{itemize}
+
 
 \section{Flurry analytics}
 \label{sec:flurry}
