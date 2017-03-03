@@ -169,7 +169,7 @@ Using these angles information the recognition algorithm will be able to determi
 \label{sec:recognitionalgorithm}
 As we have detailed in the previous section, each piece is defined by the triangles on their base. As we know, each triangle is defined by their three angles.
 
-In order to determine the placed piece, we have to calculate the angles of the triangle formed by the three pads located in the figure base.
+In order to determine the placed piece, we have to retrieve the three intrument pads positions after the gamer places the piece on the recogtion zone. This information will be the input of the algorithm that we have developed to determine the placed musical instrument.
 
 We can see the recognition algorithm in Figure \ref{fig:detectionalgorithm}.
 
@@ -200,7 +200,7 @@ The application is the biggest module of the game. It includes the whole softwar
 	\label{fig:applicationarchitecture}
 \end{figure}
 
-If we look at the application architecture diagram we can see the Application module where Unity game engine will run. Unity has three main components, Unity Assets, Unity Scripts and Unity Scenes, which are described below:
+If we look at the application architecture diagram we can see the Application module where Unity game engine will run. Unity has three main components, Unity Assets, Unity Scripts and Unity Scenes. These components and Unity interaction with Flurry are described below:
 
 \subsection{Assets}
 An asset is a representation of any item that can be used in your game or project. An asset may come from a file created outside of Unity, such as a 3D model, an audio file, an image, or any of the other types of file that Unity supports. There are also some asset types that can be created within Unity, such as an Animator Controller, an Audio Mixer or a Texture Managers. In other words, assets are any resource your game uses.
@@ -224,10 +224,21 @@ Creating Scenes with Unity are possible thanks to their intuitive interface, whe
 \label{subsec:unityscripts}
 Scripts, known in Unity as behaviors, let you take assets in your scene and make them interactive. Multiple scripts can be attached to a single object, allowing for easy code reuse. Unity supports three different programming languages; UnityScript, C\#, and Boo. In our project we will use C\#.
 
-As we can see in Figure 3.2, Scripts will manage Unity Assets and will use external Assets from the Unity Asset Store as libraries to make the development easier. In our case, HOTween asset allow us to automate the animation of any numeric (and some non-numeric) property or field (numbers, vectors, transforms, and so on) in many different ways. 2dToolkit provide an efficient 2D sprite, collider set-up and text system which integrates seamlessly into the Unity environment. Android and iOs plugins allow us to access to native Android and iOs libraries.
+As we can see in Figure \ref{fig:applicationarchitecture}, Scripts will manage Unity Assets and will use external Assets from the Unity Asset Store as libraries to make the development easier. In our case, HOTween asset allow us to automate the animation of any numeric (and some non-numeric) property or field (numbers, vectors, transforms, and so on) in many different ways. 2dToolkit provide an efficient 2D sprite, collider set-up and text system which integrates seamlessly into the Unity environment. Android and iOs plugins allow us to access to native Android and iOs libraries.
 
 As we said, scripts will be attached to the scene assets we need to provide them the functionality we need to.
 
+\subsection{Flurry}
+Flurry analytics allow us to easily add analytics to our mobile game applications. Integrating this technology within our application will allow us to retrieve game application metrics such as volume of users, time of use or crash reports.
+
+As we can see in Figure \ref{fig:applicationarchitecture}, in order to integrate it into our development we have to add Flurry SDK into our Unity project. Before that we just have to create a project using Flurry web application. After all this process we will be able to use flurry library to manage all the components we want to. In our case we will retrieve the following metrics:
+
+\begin{itemize}
+\item \textit{Active users}, the total number of unique users who accessed the application per day.
+\item \textit{New users}, the total number of unique users who used the application for the first time per day.
+\item \textit{Average session length}, average length of a user session per day.
+\item \textit{Crash analytics}, information about the application crashes, exceptions and errors.
+\end{itemize}
 
 \section{Application use workflow}
 The application has three game modes, for each one we will see the application use workflow to get a more precise idea of how the Gamer will interact with the application.
