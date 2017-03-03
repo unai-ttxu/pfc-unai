@@ -14,7 +14,7 @@ Gamers play on so many different types of devices which have lots of differences
 
 Unity3D game engine is an integrated development tool for producing other interactive contents such as video game, architectural visualization, real-time 3D animation. Its editor runs on Window, Mac OS X, so it could make games as the platforms of Window, Mac, Wii, iPad, and iPhone. It could also produce web browser game that uses unity web player plug-in. This is a similar form of flash, and it is designed so that flash user could easily adapt even with cross domain security policy and scripting.
 
-The functions that Unity3D supports autonomously are very abundant. In fact, all game developments are possible such as shader, physics engine, network, terrain manipulation, audio, video, and animation, and it considered so that the revision is possible to the taste of user according to the need. Unity3D that produces based on Java script and C\# can apply and manage after producing the desired functions with script, not producing all of the programing at once. GUI composed on screen helps the first-time developer to approach easily, and the script and program that programer made with simple mouse drag.~\cite{kim2014dev}
+The functions that Unity3D supports autonomously are very abundant. In fact, all game developments are possible such as shader, physics engine, network, terrain manipulation, audio, video, and animation, and it considered so that the revision is possible to the taste of user according to the need. Unity3D that produces based on Java script and C\# can apply and manage after producing the desired functions with script, not producing all of the programing at once. GUI composed on screen helps the first-time developer to approach easily, and the script and program that programmer made with simple mouse drag.~\cite{kim2014dev}
 
 \begin{figure}[h]
 \centering
@@ -23,9 +23,9 @@ The functions that Unity3D supports autonomously are very abundant. In fact, all
 \label{fig:unity_logo}
 \end{figure}
 
-Unity3D is a flexible and high-performance development platform used to make creative and intelligent interactive 3D and 2D experiences. The "author once, deploy everywhere" capability ensures developers can publish to all of the most popular platforms. Unity Technologies boasts a thriving community of over 2 million developers including large publishers, indie studios, students and hobbyists. To remain at the forefront of innovation, Unity Technologies tirelessly re-invests in its award-winning 3D development tools and its democratization initiatives, such as the Asset Store digital content marketplace and Unity Games publishing and distribution division.~\cite{unitypress1}
+Unity3D is a flexible and high-performance development platform used to make creative and intelligent interactive 3D and 2D experiences. The \enquote{author once, deploy everywhere} capability ensures developers can publish to all of the most popular platforms. Unity Technologies boasts a thriving community of over 2 million developers including large publishers, indie studios, students and hobbyists. To remain at the forefront of innovation, Unity Technologies tirelessly re-invests in its award-winning 3D development tools and its democratization initiatives, such as the Asset Store digital content marketplace and Unity Games publishing and distribution division.~\cite{unitypress1}
 
-We will detail Unity3D concepts and how those concepts will be integrated in the application development in the following subsections. Frstly we will detail Unity3D principal features in \ref{subsec:unityfeatures}, secondly in \ref{subsec:unityconcepts} we are going to detail all the Unity3D principal concepts and finally in \ref{subsec:unityinterface} we are going to explain Unity3D interface from where we create our game. 
+We will detail Unity3D concepts and how those concepts will be integrated in the application development in the following subsections. Firstly we will detail Unity3D principal features in \ref{subsec:unityfeatures}, secondly in \ref{subsec:unityconcepts} we are going to detail all the Unity3D principal concepts and finally in \ref{subsec:unityinterface} we are going to explain Unity3D interface from where we create our game. 
 
 \subsection{Unity3D features}
 \label{subsec:unityfeatures}
@@ -54,12 +54,12 @@ In this subsections, we are going to explain the Unity3D basic concepts, which a
 
 \begin{itemize}
 \item \textbf{Assets}, Assets are the actual contents we use to shape our own Unity world. Usually, most of the Assets are created using external software and then imported into the project.
-On their own they are no more than media content files: 3d models, textures, audio files, scripts and so on. 
+On their own they are no more than media content files: 3D models, textures, audio files, scripts and so on. 
 In order to exist in our product the Assets need to be included inside a Unity Scene.
-\item \textbf{Scenes}, A Scene is a self-contained 3d space where all the action happens. Every Unity Project needs to have at least one Scene. Without it, the project will be just a pile of stored Assets because they have no place to actually exist.
+\item \textbf{Scenes}, A Scene is a self-contained 3D space where all the action happens. Every Unity Project needs to have at least one Scene. Without it, the project will be just a pile of stored Assets because they have no place to actually exist.
 Most project will have multiple Scenes. The most common use of Scenes in game development is to create different levels inside a game, however this will largely depend on the project specifications and design. Although it may have as many as necessary, it is important to state that only one Scene is active and running at a given time.
-So, Scenes are the 3d space where Assets can exist. But, to include the Assets on a Scene we need GameObjects.
-\item \textbf{Game Objects}, A GameObject is the base entity of our Scene. If we want anything to exist on our Scene it needs has to be a GameObject. But by itself is no more than that. It just represents something that exists inside our 3d world and that’s it.
+So, Scenes are the 3D space where Assets can exist. But, to include the Assets on a Scene we need GameObjects.
+\item \textbf{Game Objects}, A GameObject is the base entity of our Scene. If we want anything to exist on our Scene it needs has to be a GameObject. But by itself is no more than that. It just represents something that exists inside our 3D world and that’s it.
 If a GameObject wants to be something more it needs to have Components.
 \item \textbf{Components}, A Component is responsible for assigning roles, properties and/or behaviors to GameObjects. It is the smallest building block on our world and by far the most important one.
 For example, If we want a GameObject to represent a Light in our Scene we just attach it a Light Component. If it is a static rock in our environment we attach the necessary Components for it to be a rock (we need to display the rock shape and texture and maybe a collision box). If we need a more complex GameObject such as our Player Avatar, we would need to attach a component for its’ shape, textures and all his behaviors.
@@ -198,3 +198,13 @@ Flurry analytics allow us to easily add analytics to our mobile game. Some of th
 \item \textit{User Acquisition Analytics}, Monitor your user acquisition efforts and measure the impact of specific campaigns or channels on your user base, and therefore your business.
 \end{itemize}
 
+\section{Summary}
+In this section, we have discussed the technologies related to the game we are developing.
+
+Firstly, we took a look at Unity3D engine principal characteristics. We saw that Unity3D is a flexible and high-performance development platform used to make creative and intelligent interactive 3D and 2D experiences, which ensures developers to be able to publish to all of the most popular platforms with a single development process.
+
+Later, we detailed Unity3D most remarkable features before explaining with more detail some important Unity3D concepts. Through these concepts we understand how Unity3D components work together. Moreover, we analyze Unity3D interface to know how the engine will be used to build the application.
+
+Then, we explained how Unity3D Asset Store works and detailed the assets that we will be using during the game development.
+
+Finally we took a look at Flurry Analytics, which covers the need of analyzing the application errors and metrics after its deployment.

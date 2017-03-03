@@ -16,13 +16,25 @@ Although some of these new features, like an improved performance, have made mob
 
 On one hand, the coexistence of different mobile OS such as Android, iOs or Windows Phone and on the other hand the wide range of screen sizes and resolutions make multi-platform mobile application development very complicated. This problem is presented greatly within consulting companies, whose clients requires multi-platform and multi-devices application developments.
 
-Is order to find a solution, reducing development effort and costs, we need to use multi-platform development tools that allow developers to eliminate the immense effort required to build one mobile applications for each mobile SO we need.
+When developing native applications, developers implement an application for one specific target platform using its software development kit (SDK) and frameworks. The app is tied to that specific environment. For example, applications for Android are typically programmed in Java, access the platform functionality through Android’s frameworks, and render its user interface by employing platform-provided elements. In contrast, applications for iOS use the program- ming language Objective-C and Apple’s frameworks.
+
+In case multiple platforms are to be supported by native applications, they have to be developed separately for each platform. This approach is the opposite of the cross-platform idea.~\cite{heneval2012}
+
+In order to find a solution, reducing development effort and costs, we need to use multi-platform development tools that allow developers to eliminate the immense effort required to build one mobile applications for each mobile SO we need.
+
+Cross-platform development approaches emerged to address this challenge by allowing developers to implement their apps in one step for a range of platforms, avoiding repetition and increasing productivity.~\cite{heneval2012}
+
+Usually, targeting more than one platform normally requires developing a corresponding application for each mobile operating system. However, this approach means that the development time and hence the cost of the product will increase. A cross-platform approach, on the other hand, helps to solve this problem by developing a single code base that supports multiple platforms. Another benefit of cross-platform development, is that they allow changes to be made faster to portable mobile applications, as only one single code base needs to be modified.~\cite{chaleval2013}
 
 Within the game application development context for multi-platform devices, there are some tools such as Unity3D, Unreal Engine, Marmalade, Autodesk or Corona SDK.
 
 Between all these development tools, Unity3D stands out due its soft learning curve, the possibility of development for multiple platforms in the same project and its huge community.
 
-Moreover, Unity3D facilitate the management of some critical aspects within videogame development such as images, audios, shadows, physics, network and animations. Furthermore, Unity3D Asset Store, which is driven by Unity3D community, include community plugins which give us an added value.
+Moreover, the functions that Unity3D supports autonomously are very abundant. In fact, all game developments are possible such as shader, physics engine, network, terrain manipulation, audio, video, and animation, and it considered so that the revision is possible to the taste of user according to the need.
+
+Unity3D that produces based on Java script and C\# can apply and manage after producing the desired functions with script, not producing all of the programing at once. GUI composed on screen helps the first-time developer to approach easily, and the script and program that programer made with simple mouse drag.~\cite{kim2014dev}
+
+Furthermore, Unity3D Asset Store, which is driven by Unity3D community, includes community plugins which give us an added value.
 
 The proposal of this project is to exemplify the development of a multi-platform mobile musical training software for children using the framework Unity3D Engine.
 
@@ -48,18 +60,18 @@ Within application architecture we can distinguish the following modules:
 
 \begin{description}
 
-\item[Unity3D engine] is a cross-platform game engine developed by Unity Technologies and used to develop video games for PC, consoles, mobile devices and websites. Unity is notable for its ability to target games to multiple platforms. Within a project, developers have control over delivery to mobile devices, web browsers, desktops, and consoles. Supported platforms include Android, Apple TV, BlackBerry 10, iOS, Linux, Nintendo 3DS line, macOS, PlayStation 4, PlayStation Vita, Unity Web Player (including Facebook), Wii, Wii U, Windows Phone 8, Windows, Xbox 360, and Xbox One
+\item[Unity3D engine] is a cross-platform game engine developed by Unity Technologies and used to develop video games for PC, consoles, mobile devices and websites. Unity is notable for its ability to target games to multiple platforms. Within a project, developers have control over delivery to mobile devices, web browsers, desktops, and consoles. Supported platforms include Android, Apple TV, BlackBerry 10, iOS, Linux, Nintendo 3DS line, macOS, PlayStation 4, PlayStation Vita, Unity Web Player (including Facebook), Wii, Wii U, Windows Phone 8, Windows, Xbox 360, and Xbox One.~\cite{unitypress2}
 
 \item[Unity Asset Store] is where a growing library of free and commercial assets are placed. These assets are created both by Unity Technologies and also members of the community. A wide variety of assets is available, covering everything from textures, models and animations to whole project examples, tutorials and Editor extensions. These assets are accessed from a simple interface built into the Unity Editor and are downloaded and imported directly into your project.
 
-\item[Flurry Analytics] enable users to analyze consumer behavior through data observations. The platform provides features for user segmentation, consumer funnels, and applications portfolio analysis. The platform's funnels measure customized consumer conversions and trending metrics, while the portfolio analytics feature allows companies to manage entire portfolios of mobile applications with the ability to monitor data about overlap among applications as well as up-sell and cross-sell conversions.
+\item[Flurry Analytics] enable users to analyze consumer behavior through data observations. The platform provides features for user segmentation, consumer funnels, and applications portfolio analysis. The platform's funnels measure customized consumer conversions and trending metrics, while the portfolio analytics feature allows companies to manage entire portfolios of mobile applications with the ability to monitor data about overlap among applications as well as up-sell and cross-sell conversions.~\cite{flurry1}
 
 \end{description}
 
 \section{Master thesis goals}
 \label{sec:masterthesisgoals}
 
-The main purpose of this master thesis is to a multi-platform mobile musical training software for children using the framework Unity3D Engine.
+The main purpose of this master thesis is to build a multi-platform mobile musical training software for children using the framework Unity3D Engine.
 
 This process includes the \textbf{requirement analysis} and the \textbf{architecture design}. Due to the need of physical pieces to interact with the application the build process also include the \textbf{physical instrument pieces design}. After building the game application it has to go through previously designed \textbf{software tests} to check it fits the requirements obtained in the previous stages.
 
@@ -80,7 +92,7 @@ The result of this evaluation will be a complete specification of the requiremen
 
 \textit{Chapter 4} describes the architecture of the system, dividing it into two groups and differencing application software development and physical instrument pieces design.
 
-\textit{Chapter 5} describes a selected use case. It is going to be explained the interaction with the whole game going through two of its game modes.
+\textit{Chapter 5} describes selected use cases. It is going to be explained the interaction with the whole game going through two of its game modes.
 
 \textit{Chapter 6} sums up the findings and conclusions found throughout the document and gives a hint about the work done for this master thesis.
 
