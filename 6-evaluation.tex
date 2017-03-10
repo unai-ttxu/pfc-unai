@@ -132,4 +132,88 @@ As we can see, the application have been installed from a few more countries fro
 
 \section{Engagement}
 
-\section{Quality}
+Mobile engagement is the act of engaging a user through available messaging channels inside and outside of an app. Because of that, engagement is such an important metric to analyze if the gamer has considered our application useful as their keep using it.
+
+We will observe user engagement since our game is in the market and through two principal blocks of metrics, user retention and DAU, WAU and MAU metrics.
+
+\subsection{Retention}
+Retention is arguably the most important metric in a free-to-play game. Successful free-to-play games create long-term relationships with users. Users that enjoy the experience enough are willing to pay to for a competitive advantage. A game needs to have strong retention to have time to build this relationship.
+
+To calculate retention, separate your users into cohorts based on the day they download your app. The day that the download occurs is Day 0. If a user opens your app the next day (Day 1), they are marked as retained. If they do not open the app, they are not retained. This calculation is performed for user cohort on each day after they download the app. Common days used for retention are 1, 3, 7 and 30.~\cite{gametrics2}
+
+In Figure \ref{fig:app-retention} we can see our game 90 day retention since its release:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=350pt]{graphics/evaluation/app_retention.png}
+\caption{Application retention}
+\label{fig:app-retention}
+\end{figure}
+
+\FloatBarrier
+
+As we can see, our game retention is 18.18\%. Usually, game applications tend to have lower retention values, and  according to Flurry studies, 8\% retention rate at 30 days is average across the kids game iOs sub-category applications.~\cite{flurry2} In our case, we have duplicate generally retention rates for our type of application.
+
+\subsection{DAU, WAU and MAU}
+
+Daily Active Users (DAUs) is the number of unique users that start at least one session in your app on any given day. By themselves, DAU and other high level metrics don’t provide much insight into an app’s performance. However, knowing these simple metrics is a useful starting point for an educated analytics discussion.
+
+Weekly Active Users (WAUs) is the number of unique users that start at least one session in your app on any given week. Having both DAU and WAU, we can obtain the ratio of Daily Active Users to Weekly Active Users.
+
+Monthly Active Users (MAUs) is the number of unique users that start at least one session in your app on any given month. Having both DAU and MAU, we can obtain the ratio of Daily Active Users to Monthly Active Users shows how well an app retains users and is often referred to as the stickiness of a game. This metric shows you how frequently users log in to your app.
+
+Popular social networking apps like Facebook have reported DAU/MAU ratios as high as 50 percent. But most successful gaming apps have ratios closer to 20 percent.~\cite{gametrics2}
+
+In Figure \ref{fig:app-dau} we can see our DAU, WAU and MAU data:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=350pt]{graphics/evaluation/app_dau.png}
+\caption{Application retention}
+\label{fig:app-dau}
+\end{figure}
+
+\FloatBarrier
+
+As we can see, if we calculate the DAU/WAU and DAU/MAU ratios, we obtain 20\% and 6\%. This means that the average user logged in on roughly 6 percent of the days that month.
+
+\subsection{Quality}
+
+We will study our game quality in terms of the average numbers of screens the levels plays and in the average of frames per second their devices give.
+
+In Figure \ref{fig:app-levels} we can see the mean of levels that our gamers plays in every month since the application release.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=250pt]{graphics/evaluation/app_levels.png}
+\caption{Application levels average}
+\label{fig:app-levels}
+\end{figure}
+
+\FloatBarrier
+
+As we can see, gamers plays an average of 20 levels per month. In our case, each screen is a level, so the gamer plays thorough at least 20 different screens each month.
+
+Finally, in Figure \ref{fig:app-fps} we can observe the average frames per second shown by gamers devices. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=250pt]{graphics/evaluation/app_fps.png}
+\caption{Application fps average}
+\label{fig:app-fps}
+\end{figure}
+
+\FloatBarrier
+
+As we can see, gamers devices shown an average of 29 frames per second, which is the estimated value for a game which manages lots of audio and animation resources.
+
+\subsection{Summary}
+In this chapter we evaluated our application using the metrics available from Unity Game Analytics.
+
+Firstly, we observe user acquisition in order to study the numbers of new users we obtained during the first year of the application in the market and since its release. Also, we took a look at the users location distribution.
+
+Secondly, we detailed user engagement so that we can know if the users tend to use our game after its installation. We took a look at retention information since application release as long as DAU, WAU and MAU metrics.
+
+Finally, we observed the game quality detailed the numbers of levels the gamer played and the numbers of frames per second their devices shown since the application release.
+
+
