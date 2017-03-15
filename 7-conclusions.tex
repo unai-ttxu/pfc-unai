@@ -15,11 +15,13 @@ Firstly, we covered the requirement analysis phase, determining the needs for ou
 
 Secondly, we obtained the use cases, which covers all the functional requirements obtained in the first stage of our development.
 
-Then, we design the game architecture, where we decided to use Unity3D as our game base engine. Moreover, four asset plugins placed in Unity3D (2D Toolkit, HOTween, iOs native and Android native) where included in the architecture in order to improve performance and make the development easier. Also we need to design physical pieces to let the gamer interact with the software application. This pieces have a unique base pads distribution to let our algorithm identify each piece.
+Then, we design the game architecture, where we decided to use Unity3D as our game base engine. Moreover, four asset plugins placed in Unity3D (2D Toolkit, HOTween, iOs native and Android native) where included in the architecture in order to improve performance and make the development easier. Also we need to design physical pieces to let the gamer interact with the software application. This pieces have a unique base pads distribution to let our algorithm identify each piece. In order to detect what physical figure has been placed on the application recognition zones we build the instrument recognition algorithm.
 
 Finally, we design three game modes to cover the use cases presented. In this document we have presented two of them.
 
 Following this path we have been able to build a multi-platform mobile musical training software for children using the framework Unity3D engine.
+
+This multi-platform game application have reached being a commercial product. Physical instrument pieces are sold in a renowned toy shop which have stores in more than 20 countries. Also, both iOs and Android applications have been are available in App Store and Google Play respectively.
 
 \section{Achieved goals}
 
@@ -43,6 +45,9 @@ This goal has been achieved successfully. This use case is described in \ref{sub
 
 \item[Select an instrument]
 This goal has been achieved successfully. This use case is described in \ref{subsec:selectinstrument}. As we have said in the previous achievements, the gamer is able to choose an instrument within all game modes. In order to select the instrument, the gamer is able to place the physical miniature, which represents the instrument family, on a recognition zone in the screen.
+
+\item[Build the instrument recognition algorithm]
+This goal has been achieved successfully. This actor is described in \ref{tab:actores}. The instrument recognition algorithm detects what physical figure has been placed on the application recognition zones. This algorithm is used within the three game modes included in our application when the user place the physical miniature, which represents the instrument family, on a recognition zone in the screen.
 
 \end{description}
 

@@ -19,7 +19,7 @@ In this section we will describe the \textbf{videogame architecture}, starting w
 
 \FloatBarrier
 
-The modules are detailed below:
+The modules are detailed below.
 
 \subsection{Physical instruments miniatures}
 There are five physical miniatures which represent each one of the musical instrument families used at the game: percussion, keyboards, strings, woodwind and brass. The gamer will use these pieces to interact with the app in order to change or activate the family represented by the piece. Also, pieces will be used to access to different game modes.
@@ -28,14 +28,14 @@ The interaction between the pieces and the app is haptic, that is, the gamer wil
 
 Each piece base has three little pads which conform a triangle used to determine the instrument unequivocally.
 
-Instrument miniatures design will be explain in more detail in section \ref{sec:instrumentminuatures}
+Instrument miniatures design will be explain in more detail in section \ref{sec:instrumentminuatures}.
 
 \subsection{Application}
 The application has been developed using Unity, so we can identify the Unity components included on our app. These components are Unity Scenes, Unity Textures, Unity Assets, Unity Scripts and Unity Sounds. Integrating all of these components into our Unity projects we are able to build the game logic and its graphic interface.
 
 Unity is notable for its ability to target games to multiple platforms. Within a project, we have control over delivery to different mobile devices, web browsers, desktops, and consoles. In our case, we need to develop both Android and iOs applications and Unity allow us to share the same code for them. Also, using Unity Android and iOs Plugins we are able to access to native Android and iOs SDKs, in case we need to access to some Android or iOs native components.
 
-The application architecture will be explain in more detail in section \ref{sec:application}
+The application architecture will be explain in more detail in section \ref{sec:application}.
 
 \FloatBarrier
 
@@ -187,6 +187,29 @@ If we look at \ref{fig:detectionalgorithm}, we can see how the piece if recogniz
 	\item The detection algorithm calculate the angles of a triangle build using the three coordinates given by the piece base.
 	\item The detection algorithm compare the calculated triangle with the figure's defined triangles. After it, we retrieve the piece whose base triangle match the calculated one.
 \end{enumerate}
+
+We can see the algorithm design below:
+
+\begin{algorithm}[ht!]
+ \SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
+ \SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
+ \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+
+ \Input{$(X_i,Y_i)$ $\forall$ i = 1,2,3 where $X,Y \in \mathbb{R}_2$}
+ \Output{Instrument recognized $\in$ \{Drum,Piano,Violin,Flute,Trumpet\}}
+ \BlankLine
+ initialization\;
+ \While{piece is placed on the recognition zone}{
+  read current\;
+  \eIf{understand}{
+   go to next section\;
+   current section becomes this one\;
+   }{
+   go back to the beginning of current section\;
+  }
+ }
+ \caption{Instrument recognition algorithm}
+\end{algorithm}
 
 \newpage
 \section{Application}
