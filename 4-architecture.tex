@@ -169,7 +169,7 @@ Using these angles information the recognition algorithm will be able to determi
 \label{sec:recognitionalgorithm}
 As we have detailed in the previous section, each piece is defined by the triangles on their base. As we know, each triangle is defined by their three angles.
 
-In order to determine the placed piece, we have to retrieve the three intrument pads positions after the gamer places the piece on the recogtion zone. This information will be the input of the algorithm that we have developed to determine the placed musical instrument.
+In order to determine the placed piece, we have to retrieve the three instrument pads positions after the gamer places the piece on the recognition zone. This information will be the input of the algorithm that we have developed to determine the placed musical instrument.
 
 We can see the recognition algorithm in Figure \ref{fig:detectionalgorithm}.
 
@@ -191,21 +191,24 @@ If we look at \ref{fig:detectionalgorithm}, we can see how the piece if recogniz
 We can see the algorithm design below:
 
 \begin{algorithm}[ht!]
- \SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
- \SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
- \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-
- \Input{$(X_i,Y_i)$ $\forall$ i = 1,2,3 where $X,Y \in \mathbb{R}_2$}
- \Output{Instrument recognized $\in$ \{Drum,Piano,Violin,Flute,Trumpet\}}
+ \KwData{\\dictionaryAnglesInstruments is a \{key,value\} dictionary where the keys are the instruments and the values are their triangle base angles $\rightarrow Dict\{piece,(\alpha_p,\beta_p,\gamma_p)\}$ where $\alpha_p,\beta_p,\gamma_p \in [0,\pi]$ and $p$ is $key\; index$\\instrumentCoordinates is a 3-tuple y-sorted coordinates made by the instrument base on the screen $\rightarrow [A(x_1,y_1),B(x_2,y_2),C(x_3,y_3)]$ where $(x_i,y_i) \in \mathbb{R}_2$}
+ \KwResult{\\Instrument recognized $\in$ \{Drum,Piano,Violin,Flute,Trumpet\}}
  \BlankLine
- initialization\;
  \While{piece is placed on the recognition zone}{
-  read current\;
-  \eIf{understand}{
-   go to next section\;
-   current section becomes this one\;
-   }{
-   go back to the beginning of current section\;
+  \tcp{Obtain the triangle sides module}
+  $a \leftarrow \sqrt{(x_3-x_2)^2 + (x_3-x_2)^2}$\;
+  $b \leftarrow \sqrt{(x_3-x_1)^2 + (x_3-x_1)^2}$\;
+  $c \leftarrow \sqrt{(x_2-x_1)^2 + (x_2-x_1)^2}$\;
+  \tcp{Given the triangle sides we obtain the angles}
+  $\alpha \leftarrow arcos(\frac{b^2 + c^2 - a^2}{2bc})$\;
+  $\beta \leftarrow arcos(\frac{c^2 + a^2 - b^2}{2ca})$\;
+  $\gamma \leftarrow arcos(\frac{a^2 + b^2 - c^2}{2ab})$\;
+  \tcp{Given the triangle angles we subtract them from the dictionaryAnglesInstruments values}
+  \lForEach{element $(\alpha_p,\beta_p,\gamma_p)$ in $dictionaryAnglesInstruments$}{
+  	$diference_p \leftarrow | \alpha_p - \alpha | + | \beta_p - \beta | + | \gamma_p - \gamma |$\;
+  \tcp{We return the instrument whose angle difference is the lowest}
+  $instrument\_index \leftarrow index\; min(diference)$\;
+  \KwRet{$instrumentCoordinates[index]\; key$}
   }
  }
  \caption{Instrument recognition algorithm}
